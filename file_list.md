@@ -158,26 +158,26 @@
 - `lib/craftplan_web/live/manage/product_live/form_component_photos.ex` - 製品の写真（アップロード、メイン画像設定、削除など）を管理するためのLiveComponent。
 - `lib/craftplan_web/live/manage/product_live/form_component_recipe.ex` - 製品のBOM（部品表・レシピ）情報やバージョンを管理・編集するためのLiveComponent。
 - `lib/craftplan_web/live/manage/product_live/index.ex` - 製品の一覧表示や新規製品の作成導線を提供するLiveView。
-- `lib/craftplan_web/live/manage/product_live/label.ex`
-- `lib/craftplan_web/live/manage/product_live/show.ex`
-- `lib/craftplan_web/live/manage/production_batch_live/index.ex`
-- `lib/craftplan_web/live/manage/production_batch_live/show.ex`
-- `lib/craftplan_web/live/manage/purchasing_live/index.ex`
-- `lib/craftplan_web/live/manage/purchasing_live/purchase_order_form_component.ex`
-- `lib/craftplan_web/live/manage/purchasing_live/purchase_order_item_form_component.ex`
-- `lib/craftplan_web/live/manage/purchasing_live/show.ex`
-- `lib/craftplan_web/live/manage/purchasing_live/supplier_form_component.ex`
-- `lib/craftplan_web/live/manage/purchasing_live/suppliers.ex`
-- `lib/craftplan_web/live/manage/settings_live/allergens_component.ex`
-- `lib/craftplan_web/live/manage/settings_live/api_keys_component.ex`
-- `lib/craftplan_web/live/manage/settings_live/calendar_feed_component.ex`
-- `lib/craftplan_web/live/manage/settings_live/form_component.ex`
-- `lib/craftplan_web/live/manage/settings_live/index.ex`
-- `lib/craftplan_web/live/manage/settings_live/nutritional_facts_component.ex`
-- `lib/craftplan_web/live/setup_live.ex`
-- `lib/craftplan_web/live_command_palette.ex`
-- `lib/craftplan_web/live_current_path.ex`
-- `lib/craftplan_web/live_nav.ex`
+- `lib/craftplan_web/live/manage/product_live/label.ex` - 製品のラベル（名称、成分、アレルゲン、栄養成分など）を表示・印刷するためのLiveView。
+- `lib/craftplan_web/live/manage/product_live/show.ex` - 製品の詳細情報（基本情報、BOM、写真など）を表示するためのLiveView。
+- `lib/craftplan_web/live/manage/production_batch_live/index.ex` - 生産バッチの一覧表示や検索機能を提供するLiveView。
+- `lib/craftplan_web/live/manage/production_batch_live/show.ex` - 生産バッチの詳細情報（関連する注文、割り当てられたロット、材料など）を表示するためのLiveView。
+- `lib/craftplan_web/live/manage/purchasing_live/index.ex` - 購買発注（PO）の一覧表示や検索機能を提供するLiveView。
+- `lib/craftplan_web/live/manage/purchasing_live/purchase_order_form_component.ex` - 購買発注の基本情報（サプライヤーなど）を入力・編集するためのフォーム機能を提供するLiveComponent。
+- `lib/craftplan_web/live/manage/purchasing_live/purchase_order_item_form_component.ex` - 購買発注に含まれるアイテム（材料、数量、単価など）を入力・編集するためのフォーム機能を提供するLiveComponent。
+- `lib/craftplan_web/live/manage/purchasing_live/show.ex` - 個別の購買発注の詳細情報（アイテム一覧や受け入れ状態など）を表示するためのLiveView。
+- `lib/craftplan_web/live/manage/purchasing_live/supplier_form_component.ex` - サプライヤー（仕入先）の情報（名前、連絡先など）を入力・編集するためのフォーム機能を提供するLiveComponent。
+- `lib/craftplan_web/live/manage/purchasing_live/suppliers.ex` - サプライヤーの一覧表示や検索機能を提供するLiveView。
+- `lib/craftplan_web/live/manage/settings_live/allergens_component.ex` - アレルゲンのリストを管理（追加・編集・削除）するためのLiveComponent。
+- `lib/craftplan_web/live/manage/settings_live/api_keys_component.ex` - APIキーの生成・管理（スコープ設定や無効化）を行うためのLiveComponent。
+- `lib/craftplan_web/live/manage/settings_live/calendar_feed_component.ex` - カレンダーフィード（iCal）のURL生成や購読設定を行うためのLiveComponent。
+- `lib/craftplan_web/live/manage/settings_live/form_component.ex` - アプリケーションの全体設定（通貨、税率、メール設定など）を入力・編集するためのフォーム機能を提供するLiveComponent。
+- `lib/craftplan_web/live/manage/settings_live/index.ex` - 設定画面のメインとなるLiveView。タブを切り替えて各設定（一般、APIキー、アレルゲンなど）を表示する。
+- `lib/craftplan_web/live/manage/settings_live/nutritional_facts_component.ex` - 栄養成分の項目リストを管理（追加・編集・削除）するためのLiveComponent。
+- `lib/craftplan_web/live/setup_live.ex` - 初回セットアップ画面を提供するLiveView。管理者ユーザーの登録などを行う。
+- `lib/craftplan_web/live_command_palette.ex` - コマンドパレットからのナビゲーションイベントを処理し、画面遷移を実行するLiveViewのフックモジュール。
+- `lib/craftplan_web/live_current_path.ex` - 現在のURLパスを監視し、LiveViewのassigns（`@current_path`）に設定するフックモジュール。
+- `lib/craftplan_web/live_nav.ex` - 現在のURLパスに基づいて、ナビゲーションのどのセクション（概要、生産、購買など）がアクティブかを判定し設定するフックモジュール。
 - `lib/craftplan_web/live_settings.ex`
 - `lib/craftplan_web/live_user_auth.ex`
 - `lib/craftplan_web/navigation.ex`
