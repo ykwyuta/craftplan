@@ -18,18 +18,18 @@
 - `lib/craftday_web.ex` - Webインターフェース（コントローラー、コンポーネント、ビューなど）の共通定義・マクロを提供するモジュール。
 - `lib/craftplan/accounts.ex` - アカウント関連（ユーザー、トークン、APIキーなど）のドメイン・リソースを束ねるAshコンテキストモジュール。
 - `lib/craftplan/accounts/api_key.ex` - APIキーのリソース定義（スキーマ、アクション、ポリシー等）を行うAshリソースモジュール。
-- `lib/craftplan/accounts/api_key/changes/generate_key.ex`
-- `lib/craftplan/accounts/checks/api_scope_check.ex`
-- `lib/craftplan/accounts/emails.ex`
-- `lib/craftplan/accounts/token.ex`
-- `lib/craftplan/accounts/user.ex`
-- `lib/craftplan/accounts/user/senders/send_new_user_confirmation_email.ex`
-- `lib/craftplan/accounts/user/senders/send_password_reset_email.ex`
-- `lib/craftplan/accounts/user/types/role.ex`
-- `lib/craftplan/application.ex`
-- `lib/craftplan/calendar/feed_generator.ex`
-- `lib/craftplan/catalog.ex`
-- `lib/craftplan/catalog/bom.ex`
+- `lib/craftplan/accounts/api_key/changes/generate_key.ex` - APIキー生成時にランダムなキーとそのハッシュ値、プレフィックスを生成して設定するAsh Changeモジュール。
+- `lib/craftplan/accounts/checks/api_scope_check.ex` - APIキーを用いたリクエスト時に、対象リソースとアクションに対するスコープ（権限）があるかを検証するポリシーチェックモジュール。
+- `lib/craftplan/accounts/emails.ex` - パスワードリセットや新規ユーザー登録確認などのメール送信処理（Swooshを使用）を行うモジュール。
+- `lib/craftplan/accounts/token.ex` - AshAuthenticationで使用される認証トークン（発行、無効化、有効期限切れのパージなど）を管理するリソース。
+- `lib/craftplan/accounts/user.ex` - ユーザーアカウント情報を管理するリソース。認証（パスワード等）や役割（admin, staffなど）の定義を含む。
+- `lib/craftplan/accounts/user/senders/send_new_user_confirmation_email.ex` - 新規ユーザーのメールアドレス確認用のメール送信をトリガーするAshAuthentication Senderモジュール。
+- `lib/craftplan/accounts/user/senders/send_password_reset_email.ex` - パスワードリセット用のメール送信をトリガーするAshAuthentication Senderモジュール。
+- `lib/craftplan/accounts/user/types/role.ex` - ユーザーの役割（admin, staff）を定義するカスタムタイプ。
+- `lib/craftplan/application.ex` - アプリケーションの起動エントリポイント。スーパーバイザーツリー（DB、PubSub、Webエンドポイントなど）の構成を定義する。
+- `lib/craftplan/calendar/feed_generator.ex` - カレンダーフィード（iCal形式など）を生成するためのモジュール。
+- `lib/craftplan/catalog.ex` - 製品カタログ、BOM、作業工程などをまとめるAshコンテキストモジュール。
+- `lib/craftplan/catalog/bom.ex` - 製品の部品表（BOM: Bill of Materials）のリソース定義。材料構成や作業工程などを管理する。
 - `lib/craftplan/catalog/bom_component.ex` - BOMを構成する要素（材料または別の製品）のリソース定義。
 - `lib/craftplan/catalog/bom_rollup.ex` - BOMの材料費や労務費などのコストをロールアップ（積み上げ）した結果を保持するリソース。
 - `lib/craftplan/catalog/changes/assign_bom_version.ex` - 新しいBOMを作成する際、製品に関連する次のバージョン番号を自動で割り当てるAsh Changeモジュール。
@@ -50,14 +50,14 @@
 - `lib/craftplan/catalog/services/bom_rollup.ex` - BOMの全コンポーネントを再帰的に展開し、総コストなどを計算して`catalog_bom_rollups`テーブルを更新するサービス。
 - `lib/craftplan/cldr.ex` - 多言語対応や国際化・地域化フォーマット（日付や数値など）のためのCLDR設定モジュール。
 - `lib/craftplan/crm.ex` - 顧客関係管理（CRM）関連のドメインやリソースを束ねるAshコンテキストモジュール。
-- `lib/craftplan/crm/address.ex`
-- `lib/craftplan/crm/customer.ex`
-- `lib/craftplan/csv/exporters/customers.ex`
-- `lib/craftplan/csv/exporters/movements.ex`
-- `lib/craftplan/csv/exporters/orders.ex`
-- `lib/craftplan/csv/importers/customers.ex`
-- `lib/craftplan/csv/importers/materials.ex`
-- `lib/craftplan/csv/importers/products.ex`
+- `lib/craftplan/crm/address.ex` - CRMドメイン内で住所情報（ストリート、都市、国など）を扱うための埋め込みリソース。
+- `lib/craftplan/crm/customer.ex` - 顧客情報（名前、メール、電話番号、住所など）を管理するCRMドメインのリソース定義。
+- `lib/craftplan/csv/exporters/customers.ex` - 顧客情報をCSV形式でエクスポートする処理を提供するモジュール。
+- `lib/craftplan/csv/exporters/movements.ex` - 在庫の移動・調整履歴（在庫トランザクション）をCSV形式でエクスポートするモジュール。
+- `lib/craftplan/csv/exporters/orders.ex` - 注文情報をCSV形式でエクスポートするモジュール。
+- `lib/craftplan/csv/importers/customers.ex` - CSVファイルから顧客データをインポート（またはDry-run検証）する機能を提供するモジュール。
+- `lib/craftplan/csv/importers/materials.ex` - CSVファイルから材料データ（SKU、単位、単価など）をインポートするモジュール。
+- `lib/craftplan/csv/importers/products.ex` - CSVファイルから製品データをインポート（またはDry-run検証）するモジュール。
 - `lib/craftplan/decimal_helpers.ex`
 - `lib/craftplan/encrypted/binary.ex`
 - `lib/craftplan/gettext.ex`
