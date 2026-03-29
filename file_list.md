@@ -1,23 +1,23 @@
-- `.dockerignore`
-- `.env.example`
-- `.envrc`
-- `.formatter.exs`
-- `Dockerfile`
-- `config/config.exs`
-- `config/dev.exs`
-- `config/prod.exs`
-- `config/runtime.exs`
-- `config/test.exs`
-- `docker-compose.dev.yml`
-- `docker-compose.prod.yml`
-- `docker-compose.yml`
-- `file_list.md`
-- `fly.toml`
-- `lib/.DS_Store`
-- `lib/craftday.ex`
-- `lib/craftday_web.ex`
-- `lib/craftplan/accounts.ex`
-- `lib/craftplan/accounts/api_key.ex`
+- `.dockerignore` - Dockerビルド時に除外するファイルやディレクトリを指定するファイル。
+- `.env.example` - 環境変数のテンプレートファイル。必要な環境変数のリストを提供する。
+- `.envrc` - `direnv`等を使用してディレクトリ固有の環境変数を自動で読み込むための設定ファイル。
+- `.formatter.exs` - Elixirコードのフォーマット（インデントや改行など）のルールを定義する設定ファイル。
+- `Dockerfile` - アプリケーションのDockerイメージをビルドするための手順を記述したファイル。
+- `config/config.exs` - Elixirアプリケーション全体および依存ライブラリの共通設定ファイル。
+- `config/dev.exs` - 開発環境専用の設定ファイル（データベース接続やログ出力など）。
+- `config/prod.exs` - 本番環境専用の設定ファイル。パフォーマンスやセキュリティに関する設定を含む。
+- `config/runtime.exs` - アプリケーション起動時に動的に環境変数を読み込んで設定するためのファイル。
+- `config/test.exs` - テスト環境専用の設定ファイル（テスト用データベース接続など）。
+- `docker-compose.dev.yml` - 開発環境用のDocker Compose設定ファイル。DBなどの周辺サービスを定義。
+- `docker-compose.prod.yml` - 本番環境用のDocker Compose設定ファイル。
+- `docker-compose.yml` - プロジェクトの基本となるDocker Compose設定ファイル。
+- `file_list.md` - プロジェクト内のファイル一覧を記録したマークダウンファイル。
+- `fly.toml` - Fly.ioプラットフォームへアプリケーションをデプロイするための設定ファイル。
+- `lib/.DS_Store` - macOSがディレクトリのカスタム属性を保存するために自動生成する隠しファイル。
+- `lib/craftday.ex` - Craftday（あるいはCraftplan）アプリケーションのコアとなるモジュール。ドメインロジックのエントリポイント。
+- `lib/craftday_web.ex` - Webインターフェース（コントローラー、コンポーネント、ビューなど）の共通定義・マクロを提供するモジュール。
+- `lib/craftplan/accounts.ex` - アカウント関連（ユーザー、トークン、APIキーなど）のドメイン・リソースを束ねるAshコンテキストモジュール。
+- `lib/craftplan/accounts/api_key.ex` - APIキーのリソース定義（スキーマ、アクション、ポリシー等）を行うAshリソースモジュール。
 - `lib/craftplan/accounts/api_key/changes/generate_key.ex`
 - `lib/craftplan/accounts/checks/api_scope_check.ex`
 - `lib/craftplan/accounts/emails.ex`
