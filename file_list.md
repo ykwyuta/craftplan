@@ -138,26 +138,26 @@
 - `lib/craftplan_web/json_api_router.ex` - AshJsonApiを利用して、各ドメイン（Catalog、Orders、Inventory等）のJSON APIルーティングを設定するモジュール。
 - `lib/craftplan_web/live/command_palette_search.ex` - コマンドパレットでの検索機能（画面遷移やエンティティ検索）を提供するモジュール。
 - `lib/craftplan_web/live/components/import_modal_component.ex` - CSVのインポート機能（貼り付け、アップロード、マッピング、プレビュー、エラー表示）を提供するモーダルコンポーネント。
-- `lib/craftplan_web/live/manage/customer_live/form_component.ex`
-- `lib/craftplan_web/live/manage/customer_live/index.ex`
-- `lib/craftplan_web/live/manage/customer_live/show.ex`
-- `lib/craftplan_web/live/manage/inventory_live/form_component_allergens.ex`
-- `lib/craftplan_web/live/manage/inventory_live/form_component_material.ex`
-- `lib/craftplan_web/live/manage/inventory_live/form_component_movement.ex`
-- `lib/craftplan_web/live/manage/inventory_live/form_component_nutritional_facts.ex`
-- `lib/craftplan_web/live/manage/inventory_live/index.ex`
-- `lib/craftplan_web/live/manage/inventory_live/reorder.ex`
-- `lib/craftplan_web/live/manage/inventory_live/show.ex`
-- `lib/craftplan_web/live/manage/order_live/form_component.ex`
-- `lib/craftplan_web/live/manage/order_live/helpers.ex`
-- `lib/craftplan_web/live/manage/order_live/index.ex`
-- `lib/craftplan_web/live/manage/order_live/invoice.ex`
-- `lib/craftplan_web/live/manage/order_live/show.ex`
-- `lib/craftplan_web/live/manage/overview_live.ex`
-- `lib/craftplan_web/live/manage/product_live/form_component.ex`
-- `lib/craftplan_web/live/manage/product_live/form_component_photos.ex`
-- `lib/craftplan_web/live/manage/product_live/form_component_recipe.ex`
-- `lib/craftplan_web/live/manage/product_live/index.ex`
+- `lib/craftplan_web/live/manage/customer_live/form_component.ex` - 顧客情報（名前やメールアドレスなど）を入力・編集するためのフォーム機能を提供するLiveComponent。
+- `lib/craftplan_web/live/manage/customer_live/index.ex` - 顧客の一覧表示（テーブルやグリッド形式など）や検索機能を提供するLiveView。
+- `lib/craftplan_web/live/manage/customer_live/show.ex` - 個別の顧客の詳細情報（住所やタブごとの関連情報など）を表示するためのLiveView。
+- `lib/craftplan_web/live/manage/inventory_live/form_component_allergens.ex` - 材料に関連付けられるアレルゲン情報をチェックボックス群等で入力・選択するためのLiveComponent。
+- `lib/craftplan_web/live/manage/inventory_live/form_component_material.ex` - 材料の基本情報（名前、SKU、単位、価格など）を入力・編集するためのフォーム機能を提供するLiveComponent。
+- `lib/craftplan_web/live/manage/inventory_live/form_component_movement.ex` - 在庫の移動や調整（入庫・消費など）の履歴を入力・記録するためのLiveComponent。
+- `lib/craftplan_web/live/manage/inventory_live/form_component_nutritional_facts.ex` - 材料の栄養成分情報（カロリーや脂質など）を入力・編集するためのフォーム機能を提供するLiveComponent。
+- `lib/craftplan_web/live/manage/inventory_live/index.ex` - 在庫アイテム（材料や製品）の一覧表示や予測指標などを確認するためのLiveView。
+- `lib/craftplan_web/live/manage/inventory_live/reorder.ex` - 在庫の再発注計画（不足リスクのあるアイテムや推奨発注量の計算など）を支援・表示するためのLiveView。
+- `lib/craftplan_web/live/manage/inventory_live/show.ex` - 個別の材料の詳細情報（基本情報や各タブでの関連データなど）を表示するためのLiveView。
+- `lib/craftplan_web/live/manage/order_live/form_component.ex` - 注文アイテムの詳細（商品、数量など）を入力・編集するためのフォーム機能を提供するLiveComponent。
+- `lib/craftplan_web/live/manage/order_live/helpers.ex` - 注文の期日や緊急度などの計算・フォーマット等、OrderLive関連で共通して使われるヘルパー関数を提供するモジュール。
+- `lib/craftplan_web/live/manage/order_live/index.ex` - 注文の一覧表示（テーブルビューやカレンダービューなど）やフィルタリング機能を提供するLiveView。
+- `lib/craftplan_web/live/manage/order_live/invoice.ex` - 特定の注文に対する請求書（Invoice）のHTML表示を提供するLiveView。
+- `lib/craftplan_web/live/manage/order_live/show.ex` - 個別の注文の詳細情報（関連アイテム、合計コスト、ステータスなど）を表示するためのLiveView。
+- `lib/craftplan_web/live/manage/overview_live.ex` - アプリケーション全体の概要（ダッシュボード）を表示し、在庫予測や直近の生産スケジュールなどをまとめるLiveView。
+- `lib/craftplan_web/live/manage/product_live/form_component.ex` - 製品の基本情報（名前、SKU、価格など）を入力・編集するためのフォーム機能を提供するLiveComponent。
+- `lib/craftplan_web/live/manage/product_live/form_component_photos.ex` - 製品の写真（アップロード、メイン画像設定、削除など）を管理するためのLiveComponent。
+- `lib/craftplan_web/live/manage/product_live/form_component_recipe.ex` - 製品のBOM（部品表・レシピ）情報やバージョンを管理・編集するためのLiveComponent。
+- `lib/craftplan_web/live/manage/product_live/index.ex` - 製品の一覧表示や新規製品の作成導線を提供するLiveView。
 - `lib/craftplan_web/live/manage/product_live/label.ex`
 - `lib/craftplan_web/live/manage/product_live/show.ex`
 - `lib/craftplan_web/live/manage/production_batch_live/index.ex`
