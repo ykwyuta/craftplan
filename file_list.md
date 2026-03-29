@@ -78,26 +78,26 @@
 - `lib/craftplan/inventory/receiving.ex` - 発注したPOの入荷処理（在庫の加算とステータス更新）を行うビジネスロジックを提供するサービス。
 - `lib/craftplan/inventory/supplier.ex` - 材料の仕入先（サプライヤー）情報（連絡先、メモなど）を管理するリソース。
 - `lib/craftplan/inventory_forecasting.ex` - 注文データとBOMから将来の材料必要量を算出し、在庫の予測（不足日や発注推奨量）を行うサービスモジュール。
-- `lib/craftplan/mailer.ex`
-- `lib/craftplan/orders.ex`
-- `lib/craftplan/orders/changes/assign_batch_code_and_cost.ex`
-- `lib/craftplan/orders/changes/batch_complete.ex`
-- `lib/craftplan/orders/changes/batch_consume.ex`
-- `lib/craftplan/orders/changes/batch_open_init.ex`
-- `lib/craftplan/orders/changes/calculate_totals.ex`
-- `lib/craftplan/orders/changes/validate_constraints.ex`
-- `lib/craftplan/orders/emails.ex`
-- `lib/craftplan/orders/invoice_pdf.ex`
-- `lib/craftplan/orders/order.ex`
-- `lib/craftplan/orders/order/types/payment_status.ex`
-- `lib/craftplan/orders/order/types/status.ex`
-- `lib/craftplan/orders/order_item.ex`
-- `lib/craftplan/orders/order_item/types/status.ex`
-- `lib/craftplan/orders/order_item_batch_allocation.ex`
-- `lib/craftplan/orders/order_item_lot.ex`
-- `lib/craftplan/orders/production_batch.ex`
-- `lib/craftplan/orders/production_batch_lot.ex`
-- `lib/craftplan/orders/validations/allocation_product_match.ex`
+- `lib/craftplan/mailer.ex` - Swooshを使用したメール送信処理を設定・実行するモジュール。
+- `lib/craftplan/orders.ex` - 注文（Order）および関連リソース（アイテム、バッチ、割り当てなど）を束ねるAshコンテキストモジュール。
+- `lib/craftplan/orders/changes/assign_batch_code_and_cost.ex` - 生産バッチが完了状態になる際に、関連するコストやバッチコードなどを計算して設定するAsh Changeモジュール。
+- `lib/craftplan/orders/changes/batch_complete.ex` - 生産バッチのステータスを`completed`に変更し、完了日時や生産数量などを設定するAsh Changeモジュール。
+- `lib/craftplan/orders/changes/batch_consume.ex` - 生産バッチの消費（consume）アクション時に、必要な材料などを在庫から引き落とす処理を行うAsh Changeモジュール。
+- `lib/craftplan/orders/changes/batch_open_init.ex` - 新しい生産バッチを`open`状態で作成する際、製品のBOMや計画数量、バッチコード等の初期値を設定するAsh Changeモジュール。
+- `lib/craftplan/orders/changes/calculate_totals.ex` - 注文（Order）の各アイテムや割引・送料などを計算して、全体の合計金額を設定するAsh Changeモジュール。
+- `lib/craftplan/orders/changes/validate_constraints.ex` - 注文や注文アイテムに関する各種制約事項（例: 数量が0以上か等）を検証するAsh Changeモジュール。
+- `lib/craftplan/orders/emails.ex` - 注文完了などのオーダー関連のメール通知を送信するためのモジュール。
+- `lib/craftplan/orders/invoice_pdf.ex` - Typstを使用して、注文情報のPDF形式の請求書（Invoice）を生成するモジュール。
+- `lib/craftplan/orders/order.ex` - 顧客からの注文情報を管理するドメインのAshリソース定義。
+- `lib/craftplan/orders/order/types/payment_status.ex` - 注文の支払い状況（未払い、支払い済みなど）を定義するカスタムタイプ。
+- `lib/craftplan/orders/order/types/status.ex` - 注文自体のステータス（pending、fulfilledなど）を定義するカスタムタイプ。
+- `lib/craftplan/orders/order_item.ex` - 注文に含まれる個々の商品（製品）やその数量、価格を管理するAshリソース定義。
+- `lib/craftplan/orders/order_item/types/status.ex` - 注文アイテムのステータス（準備中、完了など）を定義するカスタムタイプ。
+- `lib/craftplan/orders/order_item_batch_allocation.ex` - 注文アイテムと生産バッチを紐付け、どのバッチからどの注文にどれだけ割り当てるかを管理するAshリソース。
+- `lib/craftplan/orders/order_item_lot.ex` - 注文アイテムに割り当てられた特定のロット情報を管理するAshリソース。
+- `lib/craftplan/orders/production_batch.ex` - 製品の生産バッチ（計画数量、使用BOM、ステータス、コストなど）を管理するAshリソース定義。
+- `lib/craftplan/orders/production_batch_lot.ex` - 生産バッチに割り当てられた特定の材料ロット情報を管理するAshリソース。
+- `lib/craftplan/orders/validations/allocation_product_match.ex` - 注文アイテムへのバッチ割り当て時、バッチの製品とアイテムの製品が一致しているかを検証するモジュール。
 - `lib/craftplan/orders/validations/allocation_within_item_quantity.ex`
 - `lib/craftplan/production.ex`
 - `lib/craftplan/production/batch_sheet.ex`
