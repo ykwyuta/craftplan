@@ -118,26 +118,26 @@
 - `lib/craftplan_web/components/data_vis.ex` - データ可視化（グラフやチャートなど）用のUIコンポーネント群。
 - `lib/craftplan_web/components/forms.ex` - 入力フォームに関連するUIコンポーネント群。
 - `lib/craftplan_web/components/layouts.ex` - アプリケーション全体のレイアウト（ヘッダー、フッター、サイドバーなど）を管理するコンポーネント。
-- `lib/craftplan_web/components/layouts/app.html.heex`
-- `lib/craftplan_web/components/layouts/root.html.heex`
-- `lib/craftplan_web/components/page.ex`
-- `lib/craftplan_web/components/utils.ex`
-- `lib/craftplan_web/controllers/auth_controller.ex`
-- `lib/craftplan_web/controllers/batch_sheet_controller.ex`
-- `lib/craftplan_web/controllers/calendar_controller.ex`
-- `lib/craftplan_web/controllers/csv_export_controller.ex`
-- `lib/craftplan_web/controllers/error_html.ex`
-- `lib/craftplan_web/controllers/error_json.ex`
-- `lib/craftplan_web/controllers/invoice_controller.ex`
-- `lib/craftplan_web/controllers/page_controller.ex`
-- `lib/craftplan_web/controllers/page_html.ex`
-- `lib/craftplan_web/controllers/page_html/home.html.heex`
-- `lib/craftplan_web/endpoint.ex`
-- `lib/craftplan_web/gettext.ex`
-- `lib/craftplan_web/html_helpers.ex`
-- `lib/craftplan_web/json_api_router.ex`
-- `lib/craftplan_web/live/command_palette_search.ex`
-- `lib/craftplan_web/live/components/import_modal_component.ex`
+- `lib/craftplan_web/components/layouts/app.html.heex` - アプリケーションのメインレイアウトテンプレート（サイドバーやナビゲーションを含む）。
+- `lib/craftplan_web/components/layouts/root.html.heex` - アプリケーションのルートHTMLレイアウトテンプレート（`<html>`、`<head>`、`<body>`タグなどを含む）。
+- `lib/craftplan_web/components/page.ex` - 各管理画面のレイアウト（余白やレスポンシブ対応など）を統一するためのページコンポーネント。
+- `lib/craftplan_web/components/utils.ex` - コンポーネント向けのユーティリティ関数（Gettextを利用したエラーメッセージの翻訳など）を提供するモジュール。
+- `lib/craftplan_web/controllers/auth_controller.ex` - ユーザー認証に関するコントローラー。新規ユーザーの確認やログイン成功時の処理などを扱う。
+- `lib/craftplan_web/controllers/batch_sheet_controller.ex` - 生産バッチの指示書（バッチシート）を表示・生成するためのコントローラー。
+- `lib/craftplan_web/controllers/calendar_controller.ex` - カレンダーフィード（iCal形式）のエンドポイントを提供するコントローラー。
+- `lib/craftplan_web/controllers/csv_export_controller.ex` - 注文、顧客、在庫移動などのデータをCSV形式でエクスポートするためのコントローラー。
+- `lib/craftplan_web/controllers/error_html.ex` - HTMLリクエストでエラーが発生した際のエラーページを描画するモジュール。
+- `lib/craftplan_web/controllers/error_json.ex` - JSONリクエストでエラーが発生した際のエラーレスポンスを生成するモジュール。
+- `lib/craftplan_web/controllers/invoice_controller.ex` - 注文の請求書（Invoice）のPDFを表示・ダウンロードするためのコントローラー。
+- `lib/craftplan_web/controllers/page_controller.ex` - ホーム画面など、特定の機能に属さない一般的なページのルーティングと描画を担うコントローラー。
+- `lib/craftplan_web/controllers/page_html.ex` - `PageController` によって描画されるHTMLテンプレートをまとめるモジュール。
+- `lib/craftplan_web/controllers/page_html/home.html.heex` - ホーム画面のHTMLテンプレート。
+- `lib/craftplan_web/endpoint.ex` - Phoenixアプリケーションのエンドポイント。リクエストの初期処理（セッション、静的ファイル、ルーティングへの受け渡し等）を設定する。
+- `lib/craftplan_web/gettext.ex` - アプリケーションの国際化（i18n）を行うためのGettextモジュール。
+- `lib/craftplan_web/html_helpers.ex` - HTMLテンプレート内で日時データのフォーマット等を行うためのヘルパー関数群。
+- `lib/craftplan_web/json_api_router.ex` - AshJsonApiを利用して、各ドメイン（Catalog、Orders、Inventory等）のJSON APIルーティングを設定するモジュール。
+- `lib/craftplan_web/live/command_palette_search.ex` - コマンドパレットでの検索機能（画面遷移やエンティティ検索）を提供するモジュール。
+- `lib/craftplan_web/live/components/import_modal_component.ex` - CSVのインポート機能（貼り付け、アップロード、マッピング、プレビュー、エラー表示）を提供するモーダルコンポーネント。
 - `lib/craftplan_web/live/manage/customer_live/form_component.ex`
 - `lib/craftplan_web/live/manage/customer_live/index.ex`
 - `lib/craftplan_web/live/manage/customer_live/show.ex`
