@@ -10,6 +10,10 @@
   <img src="https://img.shields.io/badge/phoenix-%7E%3E%201.8-orange.svg" alt="Phoenix ~> 1.8">
 </p>
 
+<p align="center">
+  <a href="README.ja.md">日本語</a>
+</p>
+
 
 <div align="center">
 
