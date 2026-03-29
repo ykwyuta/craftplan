@@ -30,26 +30,26 @@
 - `lib/craftplan/calendar/feed_generator.ex`
 - `lib/craftplan/catalog.ex`
 - `lib/craftplan/catalog/bom.ex`
-- `lib/craftplan/catalog/bom_component.ex`
-- `lib/craftplan/catalog/bom_rollup.ex`
-- `lib/craftplan/catalog/changes/assign_bom_version.ex`
-- `lib/craftplan/catalog/changes/validate_component_target.ex`
-- `lib/craftplan/catalog/labor_step.ex`
-- `lib/craftplan/catalog/product.ex`
-- `lib/craftplan/catalog/product/calculations/allergens.ex`
-- `lib/craftplan/catalog/product/calculations/gross_profit.ex`
-- `lib/craftplan/catalog/product/calculations/markup_percentage.ex`
-- `lib/craftplan/catalog/product/calculations/material_cost.ex`
-- `lib/craftplan/catalog/product/calculations/nutritional_facts.ex`
-- `lib/craftplan/catalog/product/calculations/unit_cost.ex`
-- `lib/craftplan/catalog/product/photo.ex`
-- `lib/craftplan/catalog/product/types/status.ex`
-- `lib/craftplan/catalog/services/batch_cost_calculator.ex`
-- `lib/craftplan/catalog/services/bom_duplicate.ex`
-- `lib/craftplan/catalog/services/bom_recipe_sync.ex`
-- `lib/craftplan/catalog/services/bom_rollup.ex`
-- `lib/craftplan/cldr.ex`
-- `lib/craftplan/crm.ex`
+- `lib/craftplan/catalog/bom_component.ex` - BOMを構成する要素（材料または別の製品）のリソース定義。
+- `lib/craftplan/catalog/bom_rollup.ex` - BOMの材料費や労務費などのコストをロールアップ（積み上げ）した結果を保持するリソース。
+- `lib/craftplan/catalog/changes/assign_bom_version.ex` - 新しいBOMを作成する際、製品に関連する次のバージョン番号を自動で割り当てるAsh Changeモジュール。
+- `lib/craftplan/catalog/changes/validate_component_target.ex` - BOMコンポーネントが材料と製品のどちらを指しているか正しく検証するためのAsh Changeモジュール。
+- `lib/craftplan/catalog/labor_step.ex` - 製造工程における作業ステップ（所要時間やコスト）を定義するリソース。
+- `lib/craftplan/catalog/product.ex` - 製品そのもののリソース定義。原価計算やアレルゲン情報の算出なども含まれる。
+- `lib/craftplan/catalog/product/calculations/allergens.ex` - アクティブなBOMに基づいて、製品に含まれるアレルゲンを計算するモジュール。
+- `lib/craftplan/catalog/product/calculations/gross_profit.ex` - 製品の粗利（販売価格 - 単位原価）を計算するモジュール。
+- `lib/craftplan/catalog/product/calculations/markup_percentage.ex` - 製品のマークアップ率（粗利率）を計算するモジュール。
+- `lib/craftplan/catalog/product/calculations/material_cost.ex` - アクティブなBOMのロールアップ情報から、製品の材料費を算出するモジュール。
+- `lib/craftplan/catalog/product/calculations/nutritional_facts.ex` - BOMに基づいて製品の栄養成分表示（カロリーや脂質など）を計算するモジュール。
+- `lib/craftplan/catalog/product/calculations/unit_cost.ex` - アクティブなBOMから製品の単位当たりの総原価（材料費＋労務費＋間接費）を算出するモジュール。
+- `lib/craftplan/catalog/product/photo.ex` - 製品の写真を管理・アップロードするためのWaffle設定モジュール（サムネイル生成等を含む）。
+- `lib/craftplan/catalog/product/types/status.ex` - 製品のステータス（draft、active、archivedなど）を定義するカスタムタイプ。
+- `lib/craftplan/catalog/services/batch_cost_calculator.ex` - 製造バッチごとの材料費、労務費、間接費を計算するビジネスロジック。
+- `lib/craftplan/catalog/services/bom_duplicate.ex` - 既存のBOMを複製（コピー）する処理を提供するサービスモジュール。
+- `lib/craftplan/catalog/services/bom_recipe_sync.ex` - 製品に関連するBOM（アクティブまたは最新のもの）を読み込む・準備するためのサービスモジュール。
+- `lib/craftplan/catalog/services/bom_rollup.ex` - BOMの全コンポーネントを再帰的に展開し、総コストなどを計算して`catalog_bom_rollups`テーブルを更新するサービス。
+- `lib/craftplan/cldr.ex` - 多言語対応や国際化・地域化フォーマット（日付や数値など）のためのCLDR設定モジュール。
+- `lib/craftplan/crm.ex` - 顧客関係管理（CRM）関連のドメインやリソースを束ねるAshコンテキストモジュール。
 - `lib/craftplan/crm/address.ex`
 - `lib/craftplan/crm/customer.ex`
 - `lib/craftplan/csv/exporters/customers.ex`
