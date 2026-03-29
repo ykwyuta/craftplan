@@ -18,26 +18,26 @@
 - `lib/craftday_web.ex` - Webインターフェース（コントローラー、コンポーネント、ビューなど）の共通定義・マクロを提供するモジュール。
 - `lib/craftplan/accounts.ex` - アカウント関連（ユーザー、トークン、APIキーなど）のドメイン・リソースを束ねるAshコンテキストモジュール。
 - `lib/craftplan/accounts/api_key.ex` - APIキーのリソース定義（スキーマ、アクション、ポリシー等）を行うAshリソースモジュール。
-- `lib/craftplan/accounts/api_key/changes/generate_key.ex`
-- `lib/craftplan/accounts/checks/api_scope_check.ex`
-- `lib/craftplan/accounts/emails.ex`
-- `lib/craftplan/accounts/token.ex`
-- `lib/craftplan/accounts/user.ex`
-- `lib/craftplan/accounts/user/senders/send_new_user_confirmation_email.ex`
-- `lib/craftplan/accounts/user/senders/send_password_reset_email.ex`
-- `lib/craftplan/accounts/user/types/role.ex`
-- `lib/craftplan/application.ex`
-- `lib/craftplan/calendar/feed_generator.ex`
-- `lib/craftplan/catalog.ex`
-- `lib/craftplan/catalog/bom.ex`
-- `lib/craftplan/catalog/bom_component.ex`
-- `lib/craftplan/catalog/bom_rollup.ex`
-- `lib/craftplan/catalog/changes/assign_bom_version.ex`
-- `lib/craftplan/catalog/changes/validate_component_target.ex`
-- `lib/craftplan/catalog/labor_step.ex`
-- `lib/craftplan/catalog/product.ex`
-- `lib/craftplan/catalog/product/calculations/allergens.ex`
-- `lib/craftplan/catalog/product/calculations/gross_profit.ex`
+- `lib/craftplan/accounts/api_key/changes/generate_key.ex` - APIキー生成処理（ランダムなトークンとハッシュの生成など）を行うカスタム変更モジュール。
+- `lib/craftplan/accounts/checks/api_scope_check.ex` - APIキーのスコープ検証を行うカスタムチェックモジュール。
+- `lib/craftplan/accounts/emails.ex` - アカウント関連のメール（パスワードリセットなど）を生成・送信するためのモジュール。
+- `lib/craftplan/accounts/token.ex` - ユーザーの認証トークン（セッション、リセット等）を管理するAshリソースモジュール。
+- `lib/craftplan/accounts/user.ex` - ユーザー情報を管理するAshリソースモジュール。
+- `lib/craftplan/accounts/user/senders/send_new_user_confirmation_email.ex` - 新規ユーザー登録時の確認メール送信処理を行うモジュール。
+- `lib/craftplan/accounts/user/senders/send_password_reset_email.ex` - パスワードリセット時のメール送信処理を行うモジュール。
+- `lib/craftplan/accounts/user/types/role.ex` - ユーザーのロール（権限など）を定義するカスタム型モジュール。
+- `lib/craftplan/application.ex` - Elixirアプリケーションの起動設定とスーパーバイザツリーを定義するモジュール。
+- `lib/craftplan/calendar/feed_generator.ex` - カレンダーフィード（iCal形式など）の生成を行うモジュール。
+- `lib/craftplan/catalog.ex` - 製品カタログ関連（製品、部品表など）のドメイン・リソースを束ねるAshコンテキストモジュール。
+- `lib/craftplan/catalog/bom.ex` - 製品の部品表（Bill of Materials）を管理するAshリソースモジュール。
+- `lib/craftplan/catalog/bom_component.ex` - 部品表を構成する個々のコンポーネント（材料や中間品）を定義するAshリソースモジュール。
+- `lib/craftplan/catalog/bom_rollup.ex` - 部品表のコストや構成を積み上げた結果を管理するAshリソースモジュール。
+- `lib/craftplan/catalog/changes/assign_bom_version.ex` - 部品表のバージョン割り当て処理を行うカスタム変更モジュール。
+- `lib/craftplan/catalog/changes/validate_component_target.ex` - 部品表コンポーネントの対象先（材料や製品）が正しいか検証するモジュール。
+- `lib/craftplan/catalog/labor_step.ex` - 製造や加工における作業工程（労働ステップ）を定義するAshリソースモジュール。
+- `lib/craftplan/catalog/product.ex` - 製品情報を管理するAshリソースモジュール。
+- `lib/craftplan/catalog/product/calculations/allergens.ex` - 製品に含まれるアレルゲン情報を計算するカスタム計算モジュール。
+- `lib/craftplan/catalog/product/calculations/gross_profit.ex` - 製品の粗利益を計算するカスタム計算モジュール。
 - `lib/craftplan/catalog/product/calculations/markup_percentage.ex`
 - `lib/craftplan/catalog/product/calculations/material_cost.ex`
 - `lib/craftplan/catalog/product/calculations/nutritional_facts.ex`
