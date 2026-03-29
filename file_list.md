@@ -98,26 +98,26 @@
 - `lib/craftplan/orders/production_batch.ex` - 製品の生産バッチ（計画数量、使用BOM、ステータス、コストなど）を管理するAshリソース定義。
 - `lib/craftplan/orders/production_batch_lot.ex` - 生産バッチに割り当てられた特定の材料ロット情報を管理するAshリソース。
 - `lib/craftplan/orders/validations/allocation_product_match.ex` - 注文アイテムへのバッチ割り当て時、バッチの製品とアイテムの製品が一致しているかを検証するモジュール。
-- `lib/craftplan/orders/validations/allocation_within_item_quantity.ex`
-- `lib/craftplan/production.ex`
-- `lib/craftplan/production/batch_sheet.ex`
-- `lib/craftplan/production/batching.ex`
-- `lib/craftplan/release.ex`
-- `lib/craftplan/repo.ex`
-- `lib/craftplan/secrets.ex`
-- `lib/craftplan/settings.ex`
-- `lib/craftplan/settings/settings.ex`
-- `lib/craftplan/types/currency.ex`
-- `lib/craftplan/types/encrypted_binary.ex`
-- `lib/craftplan/types/unit.ex`
-- `lib/craftplan/vault.ex`
-- `lib/craftplan_web/auth_overrides.ex`
-- `lib/craftplan_web/components.ex`
-- `lib/craftplan_web/components/command_palette.ex`
-- `lib/craftplan_web/components/core.ex`
-- `lib/craftplan_web/components/data_vis.ex`
-- `lib/craftplan_web/components/forms.ex`
-- `lib/craftplan_web/components/layouts.ex`
+- `lib/craftplan/orders/validations/allocation_within_item_quantity.ex` - 注文アイテムに対するバッチの割り当て予定数量が、注文アイテム自体の数量を超えないことを検証するモジュール。
+- `lib/craftplan/production.ex` - 生産管理ドメインのヘルパーモジュール。Ashによるデータ読み込みや集計などの純粋なドメインロジックを提供し、LiveViewを軽量に保つ役割を持つ。
+- `lib/craftplan/production/batch_sheet.ex` - Typst (Imprintor) を用いて、生産バッチごとの指示書（バッチシート）のPDFを生成するモジュール。
+- `lib/craftplan/production/batching.ex` - 生産バッチに関するビジネスロジック（バッチの開始、消費、完了処理、在庫ロットの自動引き当て等）を担うサービスモジュール。
+- `lib/craftplan/release.ex` - アプリケーションのリリース時（デプロイ後など）に実行する処理（データベースのマイグレーションなど）を定義するモジュール。
+- `lib/craftplan/repo.ex` - データベースとやり取りするためのEctoリポジトリモジュール。PostgreSQLの拡張機能設定なども含まれる。
+- `lib/craftplan/secrets.ex` - アプリケーションのシークレット情報（環境変数などから取得する機密データ）を管理するためのモジュール。
+- `lib/craftplan/settings.ex` - アプリケーションの各種設定（通貨、税設定、メールプロバイダーなど）を管理するAshコンテキストモジュール。
+- `lib/craftplan/settings/settings.ex` - グローバルな設定情報（通貨、税率、デフォルトのリードタイム、メール設定など）を保持するAshリソース。
+- `lib/craftplan/types/currency.ex` - アプリケーションでサポートされる通貨を定義するAshカスタムタイプ。
+- `lib/craftplan/types/encrypted_binary.ex` - データベースに保存される際に暗号化され、読み込み時に復号化されるバイナリデータのためのAshカスタムタイプ（Cloak連携）。
+- `lib/craftplan/types/unit.ex` - 測定単位（グラム、ミリリットル、個など）を定義し、単位間の変換や表示用フォーマット（略称等）を提供するAshカスタムタイプ。
+- `lib/craftplan/vault.ex` - Cloakを用いてアプリケーションの暗号化・復号化を一元管理するVaultモジュール。
+- `lib/craftplan_web/auth_overrides.ex` - 認証周り（ログイン処理など）でデフォルトの動作を上書きするためのWeb用設定モジュール。
+- `lib/craftplan_web/components.ex` - 共通UIコンポーネント（ボタン、入力フォーム、モーダルなど）を集めたマクロまたはモジュール。
+- `lib/craftplan_web/components/command_palette.ex` - コマンドパレット（クイック検索やナビゲーション用UI）のUIコンポーネント。
+- `lib/craftplan_web/components/core.ex` - アプリケーションのコアとなるUIコンポーネント（ボタン、テーブル、モーダル等）の定義群。
+- `lib/craftplan_web/components/data_vis.ex` - データ可視化（グラフやチャートなど）用のUIコンポーネント群。
+- `lib/craftplan_web/components/forms.ex` - 入力フォームに関連するUIコンポーネント群。
+- `lib/craftplan_web/components/layouts.ex` - アプリケーション全体のレイアウト（ヘッダー、フッター、サイドバーなど）を管理するコンポーネント。
 - `lib/craftplan_web/components/layouts/app.html.heex`
 - `lib/craftplan_web/components/layouts/root.html.heex`
 - `lib/craftplan_web/components/page.ex`
