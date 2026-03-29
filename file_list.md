@@ -198,26 +198,26 @@
 - `priv/repo/migrations/20241227204822_init_extensions_1.exs` - データベースで必要なPostgreSQL拡張機能やカスタム関数（通貨計算など）の初期設定を行うマイグレーションファイル。
 - `priv/repo/migrations/20241227204823_init.exs` - アプリケーションの初期テーブル（注文、在庫、ユーザーなど）とリレーションを作成するマイグレーションファイル。
 - `priv/repo/migrations/20241228150551_update_orders.exs` - 注文（orders_orders）テーブルの構造更新（customer_nameの削除など）を行うマイグレーションファイル。
-- `priv/repo/migrations/20241228153909_add_order_delivery_date.exs`
-- `priv/repo/migrations/20241231175203_add_settings.exs`
-- `priv/repo/migrations/20250101115641_add_order_unit_price.exs`
-- `priv/repo/migrations/20250105151425_add_allergens.exs`
-- `priv/repo/migrations/20250105152015_change_allergens_name.exs`
-- `priv/repo/migrations/20250105154142_change_identities.exs`
-- `priv/repo/migrations/20250106124655_change_instructions_to_notes.exs`
-- `priv/repo/migrations/20250111193811_add_order_reference.exs`
-- `priv/repo/migrations/20250111194204_add_order_reference_id.exs`
-- `priv/repo/migrations/20250112082441_add_customer_reference.exs`
-- `priv/repo/migrations/20250112102606_change_order_status.exs`
-- `priv/repo/migrations/20250330192108_add_nutritional_fact_extensions_1.exs`
-- `priv/repo/migrations/20250330192109_add_nutritional_fact.exs`
-- `priv/repo/migrations/20250406101714_add_order_item_status.exs`
-- `priv/repo/migrations/20250420171214_add_product_photos.exs`
-- `priv/repo/migrations/20251011103217_add_order_totals_and_currency.exs`
-- `priv/repo/migrations/20251011110504_add_consumed_at_and_consumption_change.exs`
-- `priv/repo/migrations/20251011124715_add_suppliers_pos_and_items.exs`
-- `priv/repo/migrations/20251011163000_add_tax_and_fulfillment_settings.exs`
-- `priv/repo/migrations/20251011163200_add_order_invoice_discount_and_delivery_fields.exs`
+- `priv/repo/migrations/20241228153909_add_order_delivery_date.exs` - 注文（orders_orders）テーブルに納期（delivery_date）カラムを追加するマイグレーションファイル。
+- `priv/repo/migrations/20241231175203_add_settings.exs` - 通貨等の設定を保存するsettingsテーブルを追加するマイグレーションファイル。
+- `priv/repo/migrations/20250101115641_add_order_unit_price.exs` - 注文アイテム（orders_items）に単価（unit_price）カラムを追加するマイグレーションファイル。
+- `priv/repo/migrations/20250105151425_add_allergens.exs` - アレルゲン情報を管理するテーブル（inventory_allergensおよび中間テーブル等）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20250105152015_change_allergens_name.exs` - アレルゲンテーブルのnameカラムの設定（ユニーク制約など）を変更するマイグレーションファイル。
+- `priv/repo/migrations/20250105154142_change_identities.exs` - リソースの識別子（Identity）やユニーク制約に関する変更を行うマイグレーションファイル。
+- `priv/repo/migrations/20250106124655_change_instructions_to_notes.exs` - 特定のテーブルのカラム名をinstructionsからnotesに変更するマイグレーションファイル。
+- `priv/repo/migrations/20250111193811_add_order_reference.exs` - 注文テーブルにリファレンス（reference）カラムを追加し、初期ステータス等を更新するマイグレーションファイル。
+- `priv/repo/migrations/20250111194204_add_order_reference_id.exs` - 注文のリファレンスID関連の変更（ユニークインデックス追加等）を行うマイグレーションファイル。
+- `priv/repo/migrations/20250112082441_add_customer_reference.exs` - 顧客テーブルにリファレンスカラム等を追加・変更するマイグレーションファイル。
+- `priv/repo/migrations/20250112102606_change_order_status.exs` - 注文のステータス管理に関連する変更を行うマイグレーションファイル。
+- `priv/repo/migrations/20250330192108_add_nutritional_fact_extensions_1.exs` - 栄養素計算等に必要なデータベースのカスタム関数やオペレーターを設定するマイグレーションファイル。
+- `priv/repo/migrations/20250330192109_add_nutritional_fact.exs` - 栄養素（nutritional facts）情報を保存するテーブルを追加するマイグレーションファイル。
+- `priv/repo/migrations/20250406101714_add_order_item_status.exs` - 注文アイテムにステータスカラム（status）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20250420171214_add_product_photos.exs` - 製品テーブルに写真情報の配列（photos）や代表写真（featured_photo）のフィールドを追加するマイグレーションファイル。
+- `priv/repo/migrations/20251011103217_add_order_totals_and_currency.exs` - 注文テーブルに通貨、小計、税、割引、合計などの金額関連のフィールドを追加するマイグレーションファイル。
+- `priv/repo/migrations/20251011110504_add_consumed_at_and_consumption_change.exs` - 注文アイテムに消費日時（consumed_at）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20251011124715_add_suppliers_pos_and_items.exs` - サプライヤー（仕入先）および購買発注（Purchase Orders）、発注アイテムのテーブルを作成するマイグレーションファイル。
+- `priv/repo/migrations/20251011163000_add_tax_and_fulfillment_settings.exs` - 設定（settings）テーブルに税金、提供方法（pickup/delivery）、リードタイムや日次生産能力などのフルフィルメント関連項目を追加するマイグレーションファイル。
+- `priv/repo/migrations/20251011163200_add_order_invoice_discount_and_delivery_fields.exs` - 注文テーブルに請求書（invoice_number等）、割引、支払い方法、配送方法などのフィールドを追加するマイグレーションファイル。
 - `priv/repo/migrations/20251011163400_add_product_selling_availability.exs`
 - `priv/repo/migrations/20251011164000_add_product_max_daily_quantity.exs`
 - `priv/repo/migrations/20251012100000_add_order_filters_indexes.exs`
