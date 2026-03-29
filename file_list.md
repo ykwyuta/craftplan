@@ -178,26 +178,26 @@
 - `lib/craftplan_web/live_command_palette.ex` - コマンドパレットからのナビゲーションイベントを処理し、画面遷移を実行するLiveViewのフックモジュール。
 - `lib/craftplan_web/live_current_path.ex` - 現在のURLパスを監視し、LiveViewのassigns（`@current_path`）に設定するフックモジュール。
 - `lib/craftplan_web/live_nav.ex` - 現在のURLパスに基づいて、ナビゲーションのどのセクション（概要、生産、購買など）がアクティブかを判定し設定するフックモジュール。
-- `lib/craftplan_web/live_settings.ex`
-- `lib/craftplan_web/live_user_auth.ex`
-- `lib/craftplan_web/navigation.ex`
-- `lib/craftplan_web/plugs/api_key_auth.ex`
-- `lib/craftplan_web/plugs/calendar_api_key_auth.ex`
-- `lib/craftplan_web/router.ex`
-- `lib/craftplan_web/schema.ex`
-- `lib/craftplan_web/telemetry.ex`
-- `mix.exs`
-- `mix.lock`
-- `plans/master.md`
-- `plans/production_batching.md`
-- `plans/whatsapp_integration.md`
-- `priv/.DS_Store`
-- `priv/gettext/en/LC_MESSAGES/errors.po`
-- `priv/gettext/errors.pot`
-- `priv/repo/migrations/.formatter.exs`
-- `priv/repo/migrations/20241227204822_init_extensions_1.exs`
-- `priv/repo/migrations/20241227204823_init.exs`
-- `priv/repo/migrations/20241228150551_update_orders.exs`
+- `lib/craftplan_web/live_settings.ex` - LiveViewのライフサイクルにフックし、アプリケーション設定をロードしてソケットのassignsに設定するモジュール。
+- `lib/craftplan_web/live_user_auth.ex` - LiveViewにおけるユーザー認証のヘルパーモジュール。ログイン状態や権限（admin, staff等）に基づくマウント処理を提供する。
+- `lib/craftplan_web/navigation.ex` - サイドバーのサブナビゲーションリンクやパンくずリストの設定など、アプリケーションのナビゲーションを一元管理するモジュール。
+- `lib/craftplan_web/plugs/api_key_auth.ex` - `cpk_`プレフィックス付きのAPIキー（Bearerトークン）を用いて、リクエストの認証・ユーザー設定を行うPlugモジュール。
+- `lib/craftplan_web/plugs/calendar_api_key_auth.ex` - カレンダーフィード用など、クエリパラメータで渡されたAPIキーを用いてリクエストを認証するPlugモジュール。
+- `lib/craftplan_web/router.ex` - アプリケーションのルーティング（URLパスとコントローラーやLiveViewとのマッピング）を定義するファイル。
+- `lib/craftplan_web/schema.ex` - AshGraphql等を利用して、GraphQL APIのスキーマを定義するモジュール。
+- `lib/craftplan_web/telemetry.ex` - アプリケーションのパフォーマンス指標（PhoenixやDBなどのメトリクス）を収集・設定するTelemetry監視モジュール。
+- `mix.exs` - Elixirプロジェクトの設定、依存関係（ライブラリ）、アプリケーションの起動構成などを定義するファイル。
+- `mix.lock` - `mix.exs`で定義された依存パッケージの正確なバージョンとチェックサムを固定するためのロックファイル。
+- `plans/master.md` - プロジェクト全体のマイルストーン、開発状況、および長期的なロードマップを記録する計画書。
+- `plans/production_batching.md` - 生産バッチ管理機能の目的、マイルストーン、仕様、UI設計などを詳細に記載した計画書。
+- `plans/whatsapp_integration.md` - WhatsAppビジネスAPI連携機能に関するシステム設計、ドメインモデル、および導入計画をまとめたドキュメント。
+- `priv/.DS_Store` - macOSがディレクトリのカスタム属性を保存するために自動生成する隠しファイル（privディレクトリ用）。
+- `priv/gettext/en/LC_MESSAGES/errors.po` - 英語環境におけるエラーメッセージの翻訳テキスト（Gettext用）を保持するファイル。
+- `priv/gettext/errors.pot` - 翻訳のベースとなるエラーメッセージのテンプレートファイル。
+- `priv/repo/migrations/.formatter.exs` - データベースマイグレーションファイル用のコードフォーマット規則を定義する設定ファイル。
+- `priv/repo/migrations/20241227204822_init_extensions_1.exs` - データベースで必要なPostgreSQL拡張機能やカスタム関数（通貨計算など）の初期設定を行うマイグレーションファイル。
+- `priv/repo/migrations/20241227204823_init.exs` - アプリケーションの初期テーブル（注文、在庫、ユーザーなど）とリレーションを作成するマイグレーションファイル。
+- `priv/repo/migrations/20241228150551_update_orders.exs` - 注文（orders_orders）テーブルの構造更新（customer_nameの削除など）を行うマイグレーションファイル。
 - `priv/repo/migrations/20241228153909_add_order_delivery_date.exs`
 - `priv/repo/migrations/20241231175203_add_settings.exs`
 - `priv/repo/migrations/20250101115641_add_order_unit_price.exs`
