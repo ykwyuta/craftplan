@@ -58,26 +58,26 @@
 - `lib/craftplan/csv/importers/customers.ex` - CSVファイルから顧客データをインポート（またはDry-run検証）する機能を提供するモジュール。
 - `lib/craftplan/csv/importers/materials.ex` - CSVファイルから材料データ（SKU、単位、単価など）をインポートするモジュール。
 - `lib/craftplan/csv/importers/products.ex` - CSVファイルから製品データをインポート（またはDry-run検証）するモジュール。
-- `lib/craftplan/decimal_helpers.ex`
-- `lib/craftplan/encrypted/binary.ex`
-- `lib/craftplan/gettext.ex`
-- `lib/craftplan/inventory.ex`
-- `lib/craftplan/inventory/allergen.ex`
-- `lib/craftplan/inventory/changes/refresh_affected_bom_rollups.ex`
-- `lib/craftplan/inventory/forecast_metrics.ex`
-- `lib/craftplan/inventory/forecast_row.ex`
-- `lib/craftplan/inventory/lot.ex`
-- `lib/craftplan/inventory/material.ex`
-- `lib/craftplan/inventory/material_allergen.ex`
-- `lib/craftplan/inventory/material_nutritional_fact.ex`
-- `lib/craftplan/inventory/movement.ex`
-- `lib/craftplan/inventory/nutritional_fact.ex`
-- `lib/craftplan/inventory/purchase_order.ex`
-- `lib/craftplan/inventory/purchase_order/types/status.ex`
-- `lib/craftplan/inventory/purchase_order_item.ex`
-- `lib/craftplan/inventory/receiving.ex`
-- `lib/craftplan/inventory/supplier.ex`
-- `lib/craftplan/inventory_forecasting.ex`
+- `lib/craftplan/decimal_helpers.ex` - `Decimal` 型を扱うためのヘルパー関数（キャスト処理など）を提供するモジュール。
+- `lib/craftplan/encrypted/binary.ex` - `Cloak.Ecto` と連携し、データベースに保存されるバイナリデータの暗号化・復号化を行うためのモジュール。
+- `lib/craftplan/gettext.ex` - アプリケーションの国際化（i18n）や翻訳テキスト管理のためのGettextバックエンドモジュール。
+- `lib/craftplan/inventory.ex` - 在庫管理（材料、ロット、発注、アレルゲン、栄養成分など）に関連するドメイン・リソースを束ねるAshコンテキストモジュール。
+- `lib/craftplan/inventory/allergen.ex` - 材料などに含まれるアレルゲン情報を管理するためのAshリソースモジュール。
+- `lib/craftplan/inventory/changes/refresh_affected_bom_rollups.ex` - 材料の価格変更時などに、その材料を使用するBOMロールアップのコスト計算結果を自動更新するAsh Changeモジュール。
+- `lib/craftplan/inventory/forecast_metrics.ex` - 在庫予測に必要な指標（平均使用量、リードタイム需要、安全在庫、発注点など）を計算するための純粋関数を提供するモジュール。
+- `lib/craftplan/inventory/forecast_row.ex` - 在庫予測グリッドに表示する各行の指標を計算し保持するための埋め込みAshリソース。
+- `lib/craftplan/inventory/lot.ex` - 材料のロット番号、有効期限、入庫日などを管理するためのリソース。
+- `lib/craftplan/inventory/material.ex` - 在庫として管理される材料・原材料（名前、SKU、単位、価格、適正在庫など）のリソース定義。
+- `lib/craftplan/inventory/material_allergen.ex` - 材料とアレルゲンを多対多で関連付けるための中間テーブルのリソース。
+- `lib/craftplan/inventory/material_nutritional_fact.ex` - 材料と栄養成分情報（量や単位を含む）を関連付ける中間テーブルのリソース。
+- `lib/craftplan/inventory/movement.ex` - 材料やロットの在庫の増減（在庫調整、入庫、消費など）の履歴を記録するリソース。
+- `lib/craftplan/inventory/nutritional_fact.ex` - 材料や製品に含まれる栄養成分の項目名を管理するリソース。
+- `lib/craftplan/inventory/purchase_order.ex` - 購買発注（PO）全体を管理するリソース（参照番号、ステータス、発注先サプライヤー情報など）。
+- `lib/craftplan/inventory/purchase_order/types/status.ex` - 購買発注のステータス（draft、ordered、receivedなど）を定義するカスタムタイプ。
+- `lib/craftplan/inventory/purchase_order_item.ex` - 購買発注に含まれる個々のアイテム（発注材料、数量、単価）を管理するリソース。
+- `lib/craftplan/inventory/receiving.ex` - 発注したPOの入荷処理（在庫の加算とステータス更新）を行うビジネスロジックを提供するサービス。
+- `lib/craftplan/inventory/supplier.ex` - 材料の仕入先（サプライヤー）情報（連絡先、メモなど）を管理するリソース。
+- `lib/craftplan/inventory_forecasting.ex` - 注文データとBOMから将来の材料必要量を算出し、在庫の予測（不足日や発注推奨量）を行うサービスモジュール。
 - `lib/craftplan/mailer.ex`
 - `lib/craftplan/orders.ex`
 - `lib/craftplan/orders/changes/assign_batch_code_and_cost.ex`
