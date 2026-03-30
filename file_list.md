@@ -238,26 +238,26 @@
 - `priv/repo/migrations/20260130200000_add_email_provider_to_settings.exs` - 設定テーブルにメールプロバイダー設定およびAPIキーなどの関連情報を追加するマイグレーションファイル。
 - `priv/repo/migrations/20260204120000_add_performance_indexes.exs` - クエリパフォーマンス向上のため、注文アイテムや在庫移動テーブルにインデックスを追加するマイグレーションファイル。
 - `priv/repo/migrations/20260204150000_add_forecasting_settings.exs` - 設定テーブルに在庫予測機能に関連する設定値（予測期間や重み付けなど）を追加するマイグレーションファイル。
-- `priv/repo/seeds.exs`
-- `priv/resource_snapshots/repo/accounts_api_keys/20260130151516.json`
-- `priv/resource_snapshots/repo/accounts_tokens/20241227204823.json`
-- `priv/resource_snapshots/repo/accounts_tokens/20250330192109.json`
-- `priv/resource_snapshots/repo/accounts_users/20241227204823.json`
-- `priv/resource_snapshots/repo/catalog_bom_components/20251101085439.json`
-- `priv/resource_snapshots/repo/catalog_bom_rollups/20251101123841.json`
-- `priv/resource_snapshots/repo/catalog_bom_rollups/20251101144320.json`
-- `priv/resource_snapshots/repo/catalog_boms/20251101085439.json`
-- `priv/resource_snapshots/repo/catalog_boms/20251101144320.json`
-- `priv/resource_snapshots/repo/catalog_labor_steps/20251101085439.json`
-- `priv/resource_snapshots/repo/catalog_labor_steps/20251102073133.json`
-- `priv/resource_snapshots/repo/catalog_products/20241227204823.json`
-- `priv/resource_snapshots/repo/catalog_products/20250105154142.json`
-- `priv/resource_snapshots/repo/catalog_products/20250111193811.json`
-- `priv/resource_snapshots/repo/catalog_products/20250420171214.json`
-- `priv/resource_snapshots/repo/catalog_products/20251101085439.json`
-- `priv/resource_snapshots/repo/crm_customers/20241227204823.json`
-- `priv/resource_snapshots/repo/crm_customers/20250112082441.json`
-- `priv/resource_snapshots/repo/extensions.json`
+- `priv/repo/seeds.exs` - データベースの初期データ（シードデータ）を投入するためのスクリプトファイル。
+- `priv/resource_snapshots/repo/accounts_api_keys/20260130151516.json` - `accounts_api_keys` リソースのデータベーススナップショット（マイグレーション生成用）。
+- `priv/resource_snapshots/repo/accounts_tokens/20241227204823.json` - `accounts_tokens` リソースのデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/accounts_tokens/20250330192109.json` - `accounts_tokens` リソースのデータベーススナップショット（更新状態）。
+- `priv/resource_snapshots/repo/accounts_users/20241227204823.json` - `accounts_users` リソースのデータベーススナップショット。
+- `priv/resource_snapshots/repo/catalog_bom_components/20251101085439.json` - `catalog_bom_components` リソースのデータベーススナップショット。
+- `priv/resource_snapshots/repo/catalog_bom_rollups/20251101123841.json` - `catalog_bom_rollups` リソースのデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/catalog_bom_rollups/20251101144320.json` - `catalog_bom_rollups` リソースのデータベーススナップショット（更新状態）。
+- `priv/resource_snapshots/repo/catalog_boms/20251101085439.json` - `catalog_boms` リソースのデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/catalog_boms/20251101144320.json` - `catalog_boms` リソースのデータベーススナップショット（更新状態）。
+- `priv/resource_snapshots/repo/catalog_labor_steps/20251101085439.json` - `catalog_labor_steps` リソースのデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/catalog_labor_steps/20251102073133.json` - `catalog_labor_steps` リソースのデータベーススナップショット（更新状態）。
+- `priv/resource_snapshots/repo/catalog_products/20241227204823.json` - `catalog_products` リソースのデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/catalog_products/20250105154142.json` - `catalog_products` リソースのデータベーススナップショット（更新状態1）。
+- `priv/resource_snapshots/repo/catalog_products/20250111193811.json` - `catalog_products` リソースのデータベーススナップショット（更新状態2）。
+- `priv/resource_snapshots/repo/catalog_products/20250420171214.json` - `catalog_products` リソースのデータベーススナップショット（更新状態3）。
+- `priv/resource_snapshots/repo/catalog_products/20251101085439.json` - `catalog_products` リソースのデータベーススナップショット（更新状態4）。
+- `priv/resource_snapshots/repo/crm_customers/20241227204823.json` - `crm_customers` リソースのデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/crm_customers/20250112082441.json` - `crm_customers` リソースのデータベーススナップショット（更新状態）。
+- `priv/resource_snapshots/repo/extensions.json` - データベース拡張機能（PostgreSQL拡張など）のスナップショット情報を保持するファイル。
 - `priv/resource_snapshots/repo/inventory_allergens/20250105151425.json`
 - `priv/resource_snapshots/repo/inventory_allergens/20250105152015.json`
 - `priv/resource_snapshots/repo/inventory_allergens/20250105154142.json`
