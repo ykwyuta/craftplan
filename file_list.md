@@ -298,9 +298,23 @@
 - `priv/static/images/bread.svg` - アプリケーションで使用されるパンのアイコン画像ファイル。
 - `priv/static/images/favicon.svg` - サイトのファビコン（タブアイコン）画像ファイル。
 - `priv/static/robots.txt` - クローラーに対するアクセス制御ルールを記述したファイル。
-- `priv/typst/batch_sheet.typ`
-- `priv/typst/invoice.typ`
-- `railway.toml`
-- `rel/overlays/bin/migrate`
-- `rel/overlays/bin/reset`
-- `rel/overlays/bin/server`
+- `priv/typst/batch_sheet.typ` - Typstを使用して生産バッチの指示書（バッチシート）PDFを生成するためのテンプレートファイル。
+- `priv/typst/invoice.typ` - Typstを使用して注文の請求書（Invoice）PDFを生成するためのテンプレートファイル。
+- `railway.toml` - Railwayプラットフォームへアプリケーションをデプロイするための設定ファイル。
+- `rel/overlays/bin/migrate` - Elixirリリース環境でデータベースのマイグレーションを実行するためのオーバレイ・スクリプト。
+- `rel/overlays/bin/reset` - Elixirリリース環境でデータベースをリセット（初期化）するためのオーバレイ・スクリプト。
+- `rel/overlays/bin/server` - Elixirリリース環境でアプリケーションサーバーを起動するためのオーバレイ・スクリプト。
+- `screenshots/catalog-pricing.webp` - 製品カタログの価格設定（Pricing）画面のスクリーンショット画像。
+- `screenshots/catalog-recipe.webp` - 製品カタログのレシピ（BOM）管理画面のスクリーンショット画像。
+- `screenshots/customers.webp` - 顧客（Customers）一覧画面のスクリーンショット画像。
+- `screenshots/import-export.webp` - データのインポートおよびエクスポート機能画面のスクリーンショット画像。
+- `screenshots/inventory-forecast.webp` - 在庫予測（Inventory forecast）画面のスクリーンショット画像。
+- `screenshots/inventory-reorder-planner.webp` - 在庫の再発注計画（Reorder planner）画面のスクリーンショット画像。
+- `screenshots/nutrition.webp` - 製品や材料の栄養成分（Nutrition）情報の管理画面のスクリーンショット画像。
+- `screenshots/og-image.jpg` - SNSシェア時などに表示されるOpen Graph（OG）画像。
+- `screenshots/orders.webp` - 注文（Orders）管理画面のスクリーンショット画像。
+- `screenshots/plan.webp` - 生産計画（Production planning）やスケジュールの画面のスクリーンショット画像。
+- `screenshots/search.webp` - コマンドパレットや検索（Search）機能のUIを示すスクリーンショット画像。
+- `screenshots/settings.webp` - アプリケーション設定（Settings）画面のスクリーンショット画像。
+- `test/craftplan/accounts/api_key_test.exs` - アカウントのAPIキー（作成、認証、無効化など）に関する機能を検証するElixirのテストファイル。
+- `test/craftplan/catalog/material_price_bom_rollup_test.exs` - 材料価格の変更に伴うBOMのコストロールアップ（積み上げ計算）の更新機能を検証するElixirのテストファイル。
