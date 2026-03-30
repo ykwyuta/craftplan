@@ -218,26 +218,26 @@
 - `priv/repo/migrations/20251011124715_add_suppliers_pos_and_items.exs` - サプライヤー（仕入先）および購買発注（Purchase Orders）、発注アイテムのテーブルを作成するマイグレーションファイル。
 - `priv/repo/migrations/20251011163000_add_tax_and_fulfillment_settings.exs` - 設定（settings）テーブルに税金、提供方法（pickup/delivery）、リードタイムや日次生産能力などのフルフィルメント関連項目を追加するマイグレーションファイル。
 - `priv/repo/migrations/20251011163200_add_order_invoice_discount_and_delivery_fields.exs` - 注文テーブルに請求書（invoice_number等）、割引、支払い方法、配送方法などのフィールドを追加するマイグレーションファイル。
-- `priv/repo/migrations/20251011163400_add_product_selling_availability.exs`
-- `priv/repo/migrations/20251011164000_add_product_max_daily_quantity.exs`
-- `priv/repo/migrations/20251012100000_add_order_filters_indexes.exs`
-- `priv/repo/migrations/20251101085439_add_bom_foundations.exs`
-- `priv/repo/migrations/20251101123841_add_bom_rollups.exs`
-- `priv/repo/migrations/20251101125000_add_index_on_bom_rollups_product_id.exs`
-- `priv/repo/migrations/20251101130200_add_components_map_to_bom_rollups.exs`
-- `priv/repo/migrations/20251101133300_drop_recipe_tables.exs`
-- `priv/repo/migrations/20251101144320_bom_versioning.exs`
-- `priv/repo/migrations/20251101150452_advanced_recipe_versioning.exs`
-- `priv/repo/migrations/20251101182000_drop_advanced_recipe_versioning_from_settings.exs`
-- `priv/repo/migrations/20251101201014_lots_and_batches.exs`
-- `priv/repo/migrations/20251102073133_add_units_per_run_to_labor_steps.exs`
-- `priv/repo/migrations/20251109173923_add_batching_core.exs`
-- `priv/repo/migrations/20260129100000_add_email_sender_to_settings.exs`
-- `priv/repo/migrations/20260130100000_add_smtp_to_settings.exs`
-- `priv/repo/migrations/20260130151516_add_api_keys.exs`
-- `priv/repo/migrations/20260130200000_add_email_provider_to_settings.exs`
-- `priv/repo/migrations/20260204120000_add_performance_indexes.exs`
-- `priv/repo/migrations/20260204150000_add_forecasting_settings.exs`
+- `priv/repo/migrations/20251011163400_add_product_selling_availability.exs` - 製品テーブルに販売可能状況（selling_availability）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20251011164000_add_product_max_daily_quantity.exs` - 製品テーブルに1日の最大数量（max_daily_quantity）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20251012100000_add_order_filters_indexes.exs` - 注文テーブルに検索用インデックス（納期、ステータス、支払い状況）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20251101085439_add_bom_foundations.exs` - BOM（部品表）の基礎となるテーブル（boms、bom_components、labor_steps等）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20251101123841_add_bom_rollups.exs` - BOMのコスト集計情報を保持するテーブル（bom_rollups）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20251101125000_add_index_on_bom_rollups_product_id.exs` - BOMロールアップテーブルの製品IDにインデックスを追加するマイグレーションファイル。
+- `priv/repo/migrations/20251101130200_add_components_map_to_bom_rollups.exs` - BOMロールアップテーブルにコンポーネントマップとGINインデックスを追加するマイグレーションファイル。
+- `priv/repo/migrations/20251101133300_drop_recipe_tables.exs` - 旧仕様のレシピ関連テーブルを削除するマイグレーションファイル。
+- `priv/repo/migrations/20251101144320_bom_versioning.exs` - BOMのバージョン管理機能導入に伴い、アクティブなBOMのユニーク制約などを追加するマイグレーションファイル。
+- `priv/repo/migrations/20251101150452_advanced_recipe_versioning.exs` - 設定テーブルに高度なレシピバージョン管理のフラグを追加するマイグレーションファイル。
+- `priv/repo/migrations/20251101182000_drop_advanced_recipe_versioning_from_settings.exs` - 設定テーブルから高度なレシピバージョン管理のフラグを削除するマイグレーションファイル。
+- `priv/repo/migrations/20251101201014_lots_and_batches.exs` - ロット管理および生産バッチ管理の基盤となるテーブルを作成するマイグレーションファイル。
+- `priv/repo/migrations/20251102073133_add_units_per_run_to_labor_steps.exs` - 製造工程テーブルに1実行あたりの単位数（units_per_run）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20251109173923_add_batching_core.exs` - 生産バッチの詳細ステータス、生産量、割当、関連ロットを管理するテーブル構成を追加・更新するマイグレーションファイル。
+- `priv/repo/migrations/20260129100000_add_email_sender_to_settings.exs` - 設定テーブルにメール送信元の名前とアドレスを追加するマイグレーションファイル。
+- `priv/repo/migrations/20260130100000_add_smtp_to_settings.exs` - 設定テーブルにSMTP接続設定（ホスト、ポート、ユーザー名、パスワード等）を追加するマイグレーションファイル。
+- `priv/repo/migrations/20260130151516_add_api_keys.exs` - APIキー情報を保存するテーブル（accounts_api_keys）を作成するマイグレーションファイル。
+- `priv/repo/migrations/20260130200000_add_email_provider_to_settings.exs` - 設定テーブルにメールプロバイダー設定およびAPIキーなどの関連情報を追加するマイグレーションファイル。
+- `priv/repo/migrations/20260204120000_add_performance_indexes.exs` - クエリパフォーマンス向上のため、注文アイテムや在庫移動テーブルにインデックスを追加するマイグレーションファイル。
+- `priv/repo/migrations/20260204150000_add_forecasting_settings.exs` - 設定テーブルに在庫予測機能に関連する設定値（予測期間や重み付けなど）を追加するマイグレーションファイル。
 - `priv/repo/seeds.exs`
 - `priv/resource_snapshots/repo/accounts_api_keys/20260130151516.json`
 - `priv/resource_snapshots/repo/accounts_tokens/20241227204823.json`
