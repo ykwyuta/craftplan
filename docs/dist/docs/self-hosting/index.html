@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="en" class="[scrollbar-gutter:stable]"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Deploy Craftplan with Docker on your own server"><meta name="theme-color" content="#1c1917"><title>Self-Hosting · Craftplan</title><link rel="canonical" href="https://puemos.github.io/craftplan/docs/self-hosting/"><link rel="icon" type="image/svg+xml" href="/craftplan/favicon.svg"><link rel="stylesheet" href="https://rsms.me/inter/inter.css"><!-- Open Graph --><meta property="og:title" content="Self-Hosting · Craftplan"><meta property="og:description" content="Deploy Craftplan with Docker on your own server"><meta property="og:type" content="website"><meta property="og:image" content="https://puemos.github.io/craftplan/screenshots/og-image.jpg"><meta property="og:url" content="https://puemos.github.io/craftplan/docs/self-hosting/"><meta property="og:site_name" content="Craftplan"><meta property="og:locale" content="en_US"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Self-Hosting · Craftplan"><meta name="twitter:description" content="Deploy Craftplan with Docker on your own server"><meta name="twitter:image" content="https://puemos.github.io/craftplan/screenshots/og-image.jpg"><link rel="stylesheet" href="/craftplan/_astro/catalog.-9oNl2ff.css"></head> <body class="min-h-screen bg-stone-50 font-sans text-stone-800 antialiased"> <header class="sticky top-0 z-50 border-b border-stone-200 bg-stone-50/90 backdrop-blur"> <div class="mx-auto flex min-h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"> <a href="/craftplan/" class="flex items-center gap-2"> <svg class="w-7 h-7" width="66" height="54" viewBox="0 0 66 54" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_2_69)"> <path d="M21.1262 0.100903C11.2779 1.06643 3.22266 5.53542 0.850231 11.3286C-0.418743 14.501 0.160571 18.0045 2.42266 20.7907L3.19507 21.7562L3.05714 30.2528C2.91921 39.3012 2.97438 40.0184 3.71922 41.5633C4.46405 43.1357 5.23647 43.6322 9.62271 45.4805C18.9745 49.4254 24.0504 51.2737 27.5539 52.0737C28.7677 52.3495 32.1884 52.7082 32.7401 52.5978C35.4987 52.1013 58.1472 47.0254 58.7265 46.7495C59.1679 46.5288 59.7196 46.0874 59.9955 45.7012C60.961 44.3771 60.9886 44.0736 61.0989 33.6184L61.2093 23.9907L61.6782 23.6321C62.6713 22.9149 63.9679 21.3976 64.492 20.3493C66.8093 15.632 64.2989 10.6665 58.092 7.63199C50.9195 4.12852 40.6022 1.25953 31.3884 0.211249C29.2366 0.0181442 22.9469 -0.0922018 21.1262 0.100903ZM28.8228 2.91472C31.8573 3.16299 35.1125 3.63196 38.6988 4.37679C42.9195 5.28715 42.8367 5.23197 40.0229 5.56301C35.5539 6.08715 31.416 7.38371 28.4366 9.12165C22.4504 12.5975 19.6642 18.1148 21.3745 22.9976C21.7331 24.0459 22.5607 25.2873 23.3883 26.0045C24.2159 26.7769 24.078 26.7769 21.7331 26.2252C18.2021 25.37 14.0089 23.6873 8.35373 20.901C5.12612 19.301 4.79509 19.1079 4.29853 18.3907C2.09162 15.1631 3.00197 11.3286 6.75372 8.29406C11.7469 4.26645 19.9676 2.28023 28.8228 2.91472ZM48.6575 8.29406C55.0299 8.87338 60.1058 11.301 61.761 14.5286C62.4782 15.9355 62.561 17.4803 61.9817 18.7217C61.4575 19.8252 60.6851 20.7631 59.6368 21.4804C58.3127 22.3907 58.2023 22.8045 58.2023 26.8873C58.2023 28.8183 58.1472 33.3701 58.092 36.9563C58.0092 42.6943 57.9541 43.5495 57.7058 43.8529C57.4575 44.1564 55.3058 44.6805 44.9333 46.9702C38.0919 48.4874 32.2711 49.7288 31.9953 49.7288C31.1953 49.7288 30.6711 49.3702 30.2573 48.5426C29.8711 47.7702 29.8711 47.5495 29.8711 43.9357C29.8711 41.8391 29.8987 37.0667 29.9539 33.3149C30.0366 25.5356 30.1194 26.0321 28.4366 25.5356C25.7056 24.7631 24.1056 23.0528 23.8021 20.6528C23.3883 17.4803 26.3952 13.3975 30.7263 11.1906C35.416 8.84579 42.285 7.74233 48.6575 8.29406ZM8.29856 24.1562C15.1124 27.577 21.5676 29.6459 26.147 29.839L27.1125 29.8666L27.0849 35.4115C27.0573 38.4736 27.0021 42.2805 26.947 43.9081C26.8642 46.2529 26.8918 47.053 27.1125 47.853C27.3608 48.8461 27.3608 48.8461 27.0021 48.8461C25.4849 48.8461 7.63649 41.7012 6.72613 40.7357C5.87096 39.8253 5.87096 39.577 6.00889 31.0804C6.09165 26.7494 6.20199 23.1907 6.28475 23.1907C6.31234 23.2183 7.25028 23.6597 8.29856 24.1562Z" fill="black"></path> <path d="M28.8228 2.91472C31.8573 3.16299 35.1125 3.63196 38.6988 4.37679C42.9195 5.28715 42.8367 5.23197 40.0229 5.56301C35.5539 6.08715 31.416 7.38371 28.4366 9.12165C22.4504 12.5975 19.6642 18.1148 21.3745 22.9976C21.7331 24.0459 22.5607 25.2873 23.3883 26.0045C24.2159 26.7769 24.078 26.7769 21.7331 26.2252C18.2021 25.37 14.0089 23.6873 8.35373 20.901C5.12612 19.301 4.79509 19.1079 4.29853 18.3907C2.09162 15.1631 3.00197 11.3286 6.75372 8.29406C11.7469 4.26645 19.9676 2.28023 28.8228 2.91472Z" fill="black"></path> <path d="M8.29856 24.1562C15.1124 27.577 21.5676 29.6459 26.147 29.839L27.1125 29.8666L27.0849 35.4115C27.0573 38.4736 27.0021 42.2805 26.947 43.9081C26.8642 46.2529 26.8918 47.053 27.1125 47.853C27.3608 48.8461 27.3608 48.8461 27.0021 48.8461C25.4849 48.8461 7.63649 41.7012 6.72613 40.7357C5.87096 39.8253 5.87096 39.577 6.00889 31.0804C6.09165 26.7494 6.20199 23.1907 6.28475 23.1907C6.31234 23.2183 7.25028 23.6597 8.29856 24.1562Z" fill="black"></path> <path d="M31.1677 13.232C29.1815 14.0596 28.1608 14.9424 27.4435 16.5424C26.5884 18.4183 26.7815 20.6803 27.9677 22.4735C28.4918 23.2735 28.6573 23.3838 29.1539 23.3838C29.8711 23.3838 30.5884 22.8597 30.7263 22.1976C30.8091 21.839 30.6987 21.4252 30.2849 20.7079C29.7056 19.5769 29.5953 18.6389 30.0366 17.7286C30.3953 16.9562 31.416 16.1286 32.2711 15.8803C33.6505 15.4941 34.1746 14.2527 33.3746 13.232C32.9608 12.7079 32.4367 12.6803 31.1677 13.232Z" fill="black"></path> <path d="M35.5539 31.0252C34.7263 31.3563 34.6988 31.6321 34.5608 37.4529C34.4505 42.7495 34.4505 42.9426 34.7815 43.3564C35.2505 43.9357 36.3539 43.9357 36.9608 43.3839L37.3746 42.9977L37.485 37.6184C37.5953 31.7425 37.5677 31.5218 36.6574 31.108C36.1057 30.8045 36.0781 30.8045 35.5539 31.0252Z" fill="black"></path> </g> <defs> <clipPath id="clip0_2_69"> <rect width="66" height="53.122" fill="white"></rect> </clipPath> </defs> </svg> <span class="text-base font-semibold tracking-wide text-stone-800">
+Craftplan
+</span> </a> <nav class="flex items-center gap-1"> <a href="/craftplan/docs/" class="rounded-md border border-transparent px-3 py-2 text-sm font-medium text-stone-600 transition hover:bg-stone-200/50 hover:text-stone-900">
+Docs
+</a> <a href="https://github.com/puemos/craftplan" class="rounded-md border border-transparent px-3 py-2 text-sm font-medium text-stone-600 transition hover:bg-stone-200/50 hover:text-stone-900" target="_blank" rel="noopener noreferrer">
+GitHub
+</a> </nav> </div> </header>  <div class="mx-auto flex max-w-7xl"> <!-- Desktop sidebar --> <aside class="hidden lg:block lg:w-72 lg:shrink-0 lg:border-r lg:border-stone-200 bg-stone-50/90 backdrop-blur"> <div class="sticky top-14 overflow-y-auto px-4 pt-6 pb-8"> <nav class="flex flex-col gap-6"> <div> <p class="mb-3 px-3 text-xs font-semibold tracking-wide text-stone-400 uppercase"> Getting Started </p> <ul class="space-y-1"> <li> <a href="/craftplan/docs/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Introduction </a> </li><li> <a href="/craftplan/docs/self-hosting/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition bg-stone-200/70 text-stone-900"> Self-Hosting </a> </li><li> <a href="/craftplan/docs/getting-started/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Development Setup </a> </li> </ul> </div><div> <p class="mb-3 px-3 text-xs font-semibold tracking-wide text-stone-400 uppercase"> Features </p> <ul class="space-y-1"> <li> <a href="/craftplan/docs/overview/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Overview &amp; Planner </a> </li><li> <a href="/craftplan/docs/catalog/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Catalog &amp; BOMs </a> </li><li> <a href="/craftplan/docs/inventory/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Inventory </a> </li><li> <a href="/craftplan/docs/orders/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Orders </a> </li><li> <a href="/craftplan/docs/purchasing/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Purchasing </a> </li><li> <a href="/craftplan/docs/production-batching/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Production Batching </a> </li><li> <a href="/craftplan/docs/customers/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Customers </a> </li><li> <a href="/craftplan/docs/settings/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Settings </a> </li> </ul> </div><div> <p class="mb-3 px-3 text-xs font-semibold tracking-wide text-stone-400 uppercase"> API </p> <ul class="space-y-1"> <li> <a href="/craftplan/docs/api/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> API Reference </a> </li><li> <a href="/craftplan/docs/graphql/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> GraphQL Reference </a> </li> </ul> </div> </nav> </div> </aside> <!-- Mobile sidebar toggle --> <div class="lg:hidden"> <input type="checkbox" id="sidebar-toggle" class="peer hidden"> <label for="sidebar-toggle" class="fixed top-18 left-4 z-40 cursor-pointer rounded-md border border-stone-200 bg-white p-2 text-sm font-medium text-stone-600 shadow-sm transition hover:text-stone-900"> <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </label> <div class="fixed inset-0 z-30 hidden bg-black/40 peer-checked:block" onclick="document.getElementById('sidebar-toggle').checked = false"></div> <nav class="fixed top-0 left-0 z-30 hidden h-full w-72 overflow-y-auto border-r border-stone-200 bg-stone-50 px-4 pt-20 pb-8 shadow-lg peer-checked:block"> <nav class="flex flex-col gap-6"> <div> <p class="mb-3 px-3 text-xs font-semibold tracking-wide text-stone-400 uppercase"> Getting Started </p> <ul class="space-y-1"> <li> <a href="/craftplan/docs/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Introduction </a> </li><li> <a href="/craftplan/docs/self-hosting/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition bg-stone-200/70 text-stone-900"> Self-Hosting </a> </li><li> <a href="/craftplan/docs/getting-started/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Development Setup </a> </li> </ul> </div><div> <p class="mb-3 px-3 text-xs font-semibold tracking-wide text-stone-400 uppercase"> Features </p> <ul class="space-y-1"> <li> <a href="/craftplan/docs/overview/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Overview &amp; Planner </a> </li><li> <a href="/craftplan/docs/catalog/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Catalog &amp; BOMs </a> </li><li> <a href="/craftplan/docs/inventory/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Inventory </a> </li><li> <a href="/craftplan/docs/orders/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Orders </a> </li><li> <a href="/craftplan/docs/purchasing/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Purchasing </a> </li><li> <a href="/craftplan/docs/production-batching/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Production Batching </a> </li><li> <a href="/craftplan/docs/customers/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Customers </a> </li><li> <a href="/craftplan/docs/settings/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> Settings </a> </li> </ul> </div><div> <p class="mb-3 px-3 text-xs font-semibold tracking-wide text-stone-400 uppercase"> API </p> <ul class="space-y-1"> <li> <a href="/craftplan/docs/api/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> API Reference </a> </li><li> <a href="/craftplan/docs/graphql/" class="flex items-center gap-3 rounded-md border border-transparent px-3 py-2 text-sm font-medium transition text-stone-600 hover:bg-stone-200/50 hover:text-stone-900"> GraphQL Reference </a> </li> </ul> </div> </nav> </nav> </div> <!-- Main content --> <main class="min-w-0 flex-1 px-4 py-6 sm:px-6 lg:px-8"> <article class="prose prose-stone mx-auto max-w-3xl prose-headings:font-semibold prose-headings:text-stone-900 prose-a:text-indigo-600 prose-a:no-underline hover:prose-a:text-indigo-500"> <h1 class="text-lg font-semibold text-stone-900 sm:text-xl">Self-Hosting</h1> <h2 id="quick-start">Quick Start</h2>
+<p>Deploy Craftplan without cloning the repo. Just download the Compose file and start:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 1. Download the Compose file and env template</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -O</span><span style="color:#9ECBFF"> https://raw.githubusercontent.com/puemos/craftplan/main/docker-compose.yml</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -O</span><span style="color:#9ECBFF"> https://raw.githubusercontent.com/puemos/craftplan/main/.env.example</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 2. Create your environment file and fill in secrets (see below)</span></span>
+<span class="line"><span style="color:#B392F0">cp</span><span style="color:#9ECBFF"> .env.example</span><span style="color:#9ECBFF"> .env</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 3. Start everything</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> up</span><span style="color:#79B8FF"> -d</span></span></code></pre>
+<p>Craftplan will be available at <code>http://localhost:4000</code> (or the <code>PORT</code> you configured). Migrations run automatically on startup.</p>
+<hr>
+<h2 id="single-container-docker-run">Single Container (<code>docker run</code>)</h2>
+<p>If you already have a PostgreSQL database and S3-compatible storage, you can run Craftplan as a single container:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -d</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --name</span><span style="color:#9ECBFF"> craftplan</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -p</span><span style="color:#9ECBFF"> 4000:4000</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> SECRET_KEY_BASE="your-secret-key-base"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> TOKEN_SIGNING_SECRET="your-token-signing-secret"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> CLOAK_KEY="your-cloak-key"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> DATABASE_URL="ecto://postgres:password@your-db-host/craftplan"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> HOST="localhost"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> PORT="4000"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> AWS_ACCESS_KEY_ID="your-access-key"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> AWS_SECRET_ACCESS_KEY="your-secret-key"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> AWS_S3_BUCKET="craftplan"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> AWS_S3_SCHEME="https://"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> AWS_S3_HOST="s3.amazonaws.com"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> AWS_REGION="us-east-1"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  ghcr.io/puemos/craftplan:latest</span></span></code></pre>
+<p>Or with an env file:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -d</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --name</span><span style="color:#9ECBFF"> craftplan</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --env-file</span><span style="color:#9ECBFF"> .env</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> DATABASE_URL="ecto://postgres:password@your-db-host/craftplan"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -p</span><span style="color:#9ECBFF"> 4000:4000</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  ghcr.io/puemos/craftplan:latest</span></span></code></pre>
+<hr>
+<h2 id="deploy-on-railway">Deploy on Railway</h2>
+<p><a href="https://railway.com/template/craftplan"><img src="https://railway.com/button.svg" alt="Deploy on Railway"></a></p>
+<p>Railway provisions a PostgreSQL database automatically. After deploying:</p>
+<ol>
+<li>Set the required environment variables (<code>SECRET_KEY_BASE</code>, <code>TOKEN_SIGNING_SECRET</code>, <code>CLOAK_KEY</code>) in the Railway dashboard.</li>
+<li>Set <code>HOST</code> to your Railway-provided domain.</li>
+<li>For file storage, configure an external S3-compatible provider (e.g., AWS S3, Cloudflare R2, Tigris) using the <code>AWS_*</code> environment variables.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Railway does not include S3-compatible storage, so file uploads require an external provider.</p>
+</blockquote>
+<hr>
+<h2 id="generating-secrets">Generating Secrets</h2>
+<p>Your <code>.env</code> file requires several secrets. Generate them with <code>openssl</code>:</p>
+<h3 id="secret_key_base-and-token_signing_secret">SECRET_KEY_BASE and TOKEN_SIGNING_SECRET</h3>
+<p>Both are random 64-byte strings. Generate each one separately:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openssl</span><span style="color:#9ECBFF"> rand</span><span style="color:#79B8FF"> -base64</span><span style="color:#79B8FF"> 48</span></span></code></pre>
+<p>Run the command twice — once for <code>SECRET_KEY_BASE</code> and once for <code>TOKEN_SIGNING_SECRET</code>.</p>
+<h3 id="cloak_key">CLOAK_KEY</h3>
+<p>A 32-byte AES key, base64-encoded:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openssl</span><span style="color:#9ECBFF"> rand</span><span style="color:#79B8FF"> -base64</span><span style="color:#79B8FF"> 32</span></span></code></pre>
+<h3 id="postgres_password">POSTGRES_PASSWORD</h3>
+<p>A password for the bundled PostgreSQL container (not needed if you supply your own <code>DATABASE_URL</code>):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openssl</span><span style="color:#9ECBFF"> rand</span><span style="color:#79B8FF"> -base64</span><span style="color:#79B8FF"> 16</span></span></code></pre>
+<hr>
+<h2 id="configuration-reference">Configuration Reference</h2>
+<p>All configuration is done via environment variables in your <code>.env</code> file.</p>
+<h3 id="required">Required</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody><tr><td><code>SECRET_KEY_BASE</code></td><td>Phoenix secret for signing cookies and sessions</td></tr><tr><td><code>TOKEN_SIGNING_SECRET</code></td><td>Secret for API token signing</td></tr><tr><td><code>CLOAK_KEY</code></td><td>32-byte base64-encoded AES encryption key</td></tr><tr><td><code>POSTGRES_PASSWORD</code></td><td>Password for the PostgreSQL database</td></tr></tbody></table>
+<h3 id="host--networking">Host &#x26; Networking</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>HOST</code></td><td><code>localhost</code></td><td>Public hostname (used in generated URLs)</td></tr><tr><td><code>PORT</code></td><td><code>4000</code></td><td>HTTP port the server listens on</td></tr></tbody></table>
+<h3 id="file-storage-s3--minio">File Storage (S3 / MinIO)</h3>
+<p>The bundled MinIO container works out of the box. Override these to use an external S3-compatible provider:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>MINIO_ROOT_USER</code></td><td><code>minioadmin</code></td><td>MinIO access key</td></tr><tr><td><code>MINIO_ROOT_PASSWORD</code></td><td><code>minioadmin</code></td><td>MinIO secret key</td></tr><tr><td><code>AWS_S3_BUCKET</code></td><td><code>craftplan</code></td><td>S3 bucket name</td></tr><tr><td><code>AWS_S3_SCHEME</code></td><td><code>https://</code></td><td>S3 endpoint scheme (<code>http://</code> for MinIO)</td></tr><tr><td><code>AWS_ACCESS_KEY_ID</code></td><td>-</td><td>External S3 access key</td></tr><tr><td><code>AWS_SECRET_ACCESS_KEY</code></td><td>-</td><td>External S3 secret key</td></tr><tr><td><code>AWS_S3_HOST</code></td><td><code>s3.amazonaws.com</code></td><td>S3 endpoint hostname</td></tr><tr><td><code>AWS_REGION</code></td><td><code>us-east-1</code></td><td>S3 region</td></tr><tr><td><code>AWS_ASSET_HOST</code></td><td>-</td><td>Public URL prefix for uploaded assets</td></tr></tbody></table>
+<h3 id="email-optional">Email (Optional)</h3>
+<p>Email is primarily configured from the <strong>Settings UI</strong> inside the app. Environment variables are a fallback for automated or headless setups.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody><tr><td><code>EMAIL_PROVIDER</code></td><td>One of: <code>sendgrid</code>, <code>postmark</code>, <code>brevo</code>, <code>mailgun</code>, <code>amazon_ses</code></td></tr><tr><td><code>EMAIL_API_KEY</code></td><td>API key for the chosen provider</td></tr><tr><td><code>EMAIL_API_DOMAIN</code></td><td>Mailgun domain (Mailgun only)</td></tr><tr><td><code>EMAIL_API_SECRET</code></td><td>Secret key (Amazon SES only)</td></tr><tr><td><code>EMAIL_API_REGION</code></td><td>AWS region (Amazon SES only, default: <code>us-east-1</code>)</td></tr><tr><td><code>SMTP_HOST</code></td><td>SMTP relay hostname (alternative to API providers)</td></tr><tr><td><code>SMTP_PORT</code></td><td>SMTP port (default: <code>587</code>)</td></tr><tr><td><code>SMTP_USERNAME</code></td><td>SMTP username</td></tr><tr><td><code>SMTP_PASSWORD</code></td><td>SMTP password</td></tr></tbody></table>
+<hr>
+<h2 id="file-storage">File Storage</h2>
+<h3 id="bundled-minio">Bundled MinIO</h3>
+<p>The default <code>docker-compose.yml</code> includes a MinIO container that provides S3-compatible object storage. It creates a <code>craftplan</code> bucket automatically and requires no additional configuration.</p>
+<p>The MinIO console is available at <code>http://localhost:9001</code> with the credentials from your <code>.env</code>.</p>
+<h3 id="external-s3">External S3</h3>
+<p>To use AWS S3 or another S3-compatible provider, set the <code>AWS_*</code> variables in your <code>.env</code> and remove or comment out the <code>minio</code> service from <code>docker-compose.yml</code>.</p>
+<hr>
+<h2 id="reverse-proxy">Reverse Proxy</h2>
+<p>For production deployments, place Craftplan behind a reverse proxy that handles TLS. Here’s an example nginx configuration:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="nginx"><code><span class="line"><span style="color:#F97583">upstream</span><span style="color:#B392F0"> craftplan </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    server</span><span style="color:#E1E4E8"> 127.0.0.1:4000;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">server</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    listen </span><span style="color:#79B8FF">443</span><span style="color:#E1E4E8"> ssl http2;</span></span>
+<span class="line"><span style="color:#F97583">    server_name </span><span style="color:#E1E4E8">your-domain.com;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    ssl_certificate </span><span style="color:#E1E4E8">    /path/to/cert.pem;</span></span>
+<span class="line"><span style="color:#F97583">    ssl_certificate_key </span><span style="color:#E1E4E8">/path/to/key.pem;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#B392F0"> / </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        proxy_pass </span><span style="color:#E1E4E8">http://craftplan;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        proxy_http_version </span><span style="color:#79B8FF">1.1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Upgrade $http_upgrade;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Connection </span><span style="color:#9ECBFF">"upgrade"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Host $host;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Real-IP $remote_addr;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-For $proxy_add_x_forwarded_for;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-Proto $scheme;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Make sure to set <code>HOST</code> to your public domain (e.g. <code>your-domain.com</code>).</p>
+<blockquote>
+<p><strong>Note:</strong> The <code>Upgrade</code> and <code>Connection</code> headers are required for Phoenix LiveView’s WebSocket connection.</p>
+</blockquote>
+<hr>
+<h2 id="updating">Updating</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> pull</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> up</span><span style="color:#79B8FF"> -d</span></span></code></pre>
+<p>Migrations run automatically on each startup via the <code>bin/server</code> entrypoint.</p>
+<hr>
+<h2 id="building-from-source">Building from Source</h2>
+<p>If you are contributing to Craftplan or need a custom build, use the build-from-source Compose file:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> clone</span><span style="color:#9ECBFF"> https://github.com/puemos/craftplan.git</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> craftplan</span></span>
+<span class="line"><span style="color:#B392F0">cp</span><span style="color:#9ECBFF"> .env.example</span><span style="color:#9ECBFF"> .env</span><span style="color:#6A737D">   # fill in secrets</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> docker-compose.prod.yml</span><span style="color:#9ECBFF"> up</span><span style="color:#79B8FF"> -d</span></span></code></pre>
+<p>Or build the image manually:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> -t</span><span style="color:#9ECBFF"> craftplan</span><span style="color:#9ECBFF"> .</span></span></code></pre>
+<p>See <code>docker-compose.prod.yml</code> for the full build-from-source configuration.</p> </article> </main> </div>  <footer class="border-t border-stone-200 bg-stone-50"> <div class="mx-auto flex max-w-7xl flex-col items-center gap-2 px-4 py-8 text-center text-sm text-stone-500 sm:px-6 lg:px-8"> <p>Built with Elixir + Ash Framework + Phoenix LiveView</p> <div class="flex items-center gap-4"> <a href="https://github.com/puemos/craftplan" class="transition hover:text-stone-900" target="_blank" rel="noopener noreferrer">
+GitHub
+</a> <span class="text-stone-300">&middot;</span> <span>AGPLv3 License</span> </div> </div> </footer> </body></html>
