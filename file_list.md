@@ -258,46 +258,46 @@
 - `priv/resource_snapshots/repo/crm_customers/20241227204823.json` - `crm_customers` リソースのデータベーススナップショット（初期状態）。
 - `priv/resource_snapshots/repo/crm_customers/20250112082441.json` - `crm_customers` リソースのデータベーススナップショット（更新状態）。
 - `priv/resource_snapshots/repo/extensions.json` - データベース拡張機能（PostgreSQL拡張など）のスナップショット情報を保持するファイル。
-- `priv/resource_snapshots/repo/inventory_allergens/20250105151425.json`
-- `priv/resource_snapshots/repo/inventory_allergens/20250105152015.json`
-- `priv/resource_snapshots/repo/inventory_allergens/20250105154142.json`
-- `priv/resource_snapshots/repo/inventory_lots/20251101201014.json`
-- `priv/resource_snapshots/repo/inventory_material_allergen/20250105151425.json`
-- `priv/resource_snapshots/repo/inventory_material_nutritional_fact/20250330192109.json`
-- `priv/resource_snapshots/repo/inventory_materials/20241227204823.json`
-- `priv/resource_snapshots/repo/inventory_materials/20250105154142.json`
-- `priv/resource_snapshots/repo/inventory_movements/20241227204823.json`
-- `priv/resource_snapshots/repo/inventory_movements/20251101201014.json`
-- `priv/resource_snapshots/repo/inventory_nutritional_facts/20250330192109.json`
-- `priv/resource_snapshots/repo/inventory_purchase_order_items/20251011124715.json`
-- `priv/resource_snapshots/repo/inventory_purchase_orders/20251011124715.json`
-- `priv/resource_snapshots/repo/inventory_suppliers/20251011124715.json`
-- `priv/resource_snapshots/repo/orders_item_batch_allocations/20251109173923.json`
-- `priv/resource_snapshots/repo/orders_item_lots/20251101201014.json`
-- `priv/resource_snapshots/repo/orders_items/20241227204823.json`
-- `priv/resource_snapshots/repo/orders_items/20250101115641.json`
-- `priv/resource_snapshots/repo/orders_items/20250406101714.json`
-- `priv/resource_snapshots/repo/orders_items/20251011110504.json`
-- `priv/resource_snapshots/repo/orders_items/20251101085439.json`
-- `priv/resource_snapshots/repo/orders_items/20251101201014.json`
-- `priv/resource_snapshots/repo/orders_orders/20241227204823.json`
-- `priv/resource_snapshots/repo/orders_orders/20241228150551.json`
-- `priv/resource_snapshots/repo/orders_orders/20241228153909.json`
-- `priv/resource_snapshots/repo/orders_orders/20250111193811.json`
-- `priv/resource_snapshots/repo/orders_orders/20250111194204.json`
-- `priv/resource_snapshots/repo/orders_orders/20250112102606.json`
-- `priv/resource_snapshots/repo/orders_orders/20251011103218.json`
-- `priv/resource_snapshots/repo/orders_orders/20251101085439.json`
-- `priv/resource_snapshots/repo/orders_production_batch_lots/20251109173923.json`
-- `priv/resource_snapshots/repo/orders_production_batches/20251101201014.json`
-- `priv/resource_snapshots/repo/orders_production_batches/20251109173923.json`
-- `priv/resource_snapshots/repo/production_tasks/20241227204823.json`
-- `priv/resource_snapshots/repo/settings/20241231175203.json`
-- `priv/resource_snapshots/repo/settings/20251101085439.json`
-- `priv/resource_snapshots/repo/settings/20260130151516.json`
-- `priv/static/images/bread.svg`
-- `priv/static/images/favicon.svg`
-- `priv/static/robots.txt`
+- `priv/resource_snapshots/repo/inventory_allergens/20250105151425.json` - `inventory_allergens` リソースのデータベーススナップショット（初期追加時）。
+- `priv/resource_snapshots/repo/inventory_allergens/20250105152015.json` - `inventory_allergens` リソースのデータベーススナップショット（カラム設定変更時）。
+- `priv/resource_snapshots/repo/inventory_allergens/20250105154142.json` - `inventory_allergens` リソースのデータベーススナップショット（制約等変更時）。
+- `priv/resource_snapshots/repo/inventory_lots/20251101201014.json` - `inventory_lots` リソース（ロット情報）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/inventory_material_allergen/20250105151425.json` - `inventory_material_allergen` リソース（材料とアレルゲンの中間テーブル）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/inventory_material_nutritional_fact/20250330192109.json` - `inventory_material_nutritional_fact` リソース（材料と栄養成分の中間テーブル）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/inventory_materials/20241227204823.json` - `inventory_materials` リソース（材料情報）のデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/inventory_materials/20250105154142.json` - `inventory_materials` リソースのデータベーススナップショット（更新状態）。
+- `priv/resource_snapshots/repo/inventory_movements/20241227204823.json` - `inventory_movements` リソース（在庫移動情報）のデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/inventory_movements/20251101201014.json` - `inventory_movements` リソースのデータベーススナップショット（更新状態）。
+- `priv/resource_snapshots/repo/inventory_nutritional_facts/20250330192109.json` - `inventory_nutritional_facts` リソース（栄養成分）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/inventory_purchase_order_items/20251011124715.json` - `inventory_purchase_order_items` リソース（購買発注アイテム）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/inventory_purchase_orders/20251011124715.json` - `inventory_purchase_orders` リソース（購買発注）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/inventory_suppliers/20251011124715.json` - `inventory_suppliers` リソース（サプライヤー）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/orders_item_batch_allocations/20251109173923.json` - `orders_item_batch_allocations` リソース（注文アイテムとバッチの割り当て）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/orders_item_lots/20251101201014.json` - `orders_item_lots` リソース（注文アイテムとロットの割り当て）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/orders_items/20241227204823.json` - `orders_items` リソース（注文アイテム）のデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/orders_items/20250101115641.json` - `orders_items` リソースのデータベーススナップショット（単価追加時）。
+- `priv/resource_snapshots/repo/orders_items/20250406101714.json` - `orders_items` リソースのデータベーススナップショット（ステータス追加時）。
+- `priv/resource_snapshots/repo/orders_items/20251011110504.json` - `orders_items` リソースのデータベーススナップショット（消費日時等追加時）。
+- `priv/resource_snapshots/repo/orders_items/20251101085439.json` - `orders_items` リソースのデータベーススナップショット（BOM関連追加時）。
+- `priv/resource_snapshots/repo/orders_items/20251101201014.json` - `orders_items` リソースのデータベーススナップショット（ロット・バッチ管理追加時）。
+- `priv/resource_snapshots/repo/orders_orders/20241227204823.json` - `orders_orders` リソース（注文情報）のデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/orders_orders/20241228150551.json` - `orders_orders` リソースのデータベーススナップショット（customer_name削除時）。
+- `priv/resource_snapshots/repo/orders_orders/20241228153909.json` - `orders_orders` リソースのデータベーススナップショット（納期追加時）。
+- `priv/resource_snapshots/repo/orders_orders/20250111193811.json` - `orders_orders` リソースのデータベーススナップショット（リファレンス追加時）。
+- `priv/resource_snapshots/repo/orders_orders/20250111194204.json` - `orders_orders` リソースのデータベーススナップショット（リファレンスID変更時）。
+- `priv/resource_snapshots/repo/orders_orders/20250112102606.json` - `orders_orders` リソースのデータベーススナップショット（ステータス変更時）。
+- `priv/resource_snapshots/repo/orders_orders/20251011103218.json` - `orders_orders` リソースのデータベーススナップショット（合計金額・通貨等追加時）。
+- `priv/resource_snapshots/repo/orders_orders/20251101085439.json` - `orders_orders` リソースのデータベーススナップショット（BOM関連の更新時）。
+- `priv/resource_snapshots/repo/orders_production_batch_lots/20251109173923.json` - `orders_production_batch_lots` リソース（生産バッチとロットの割り当て）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/orders_production_batches/20251101201014.json` - `orders_production_batches` リソース（生産バッチ）のデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/orders_production_batches/20251109173923.json` - `orders_production_batches` リソースのデータベーススナップショット（ステータス・割当等更新時）。
+- `priv/resource_snapshots/repo/production_tasks/20241227204823.json` - `production_tasks` リソース（生産タスク）のデータベーススナップショット。
+- `priv/resource_snapshots/repo/settings/20241231175203.json` - `settings` リソース（システム設定）のデータベーススナップショット（初期状態）。
+- `priv/resource_snapshots/repo/settings/20251101085439.json` - `settings` リソースのデータベーススナップショット（BOM基盤追加時）。
+- `priv/resource_snapshots/repo/settings/20260130151516.json` - `settings` リソースのデータベーススナップショット（APIキー設定等追加時）。
+- `priv/static/images/bread.svg` - アプリケーションで使用されるパンのアイコン画像ファイル。
+- `priv/static/images/favicon.svg` - サイトのファビコン（タブアイコン）画像ファイル。
+- `priv/static/robots.txt` - クローラーに対するアクセス制御ルールを記述したファイル。
 - `priv/typst/batch_sheet.typ`
 - `priv/typst/invoice.typ`
 - `railway.toml`
